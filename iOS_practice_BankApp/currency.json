@@ -1,0 +1,55 @@
+[{
+    "currencyName": "美元",
+    "buy": 29.3710,
+    "sell": 29.4710
+},
+{
+    "currencyName": "日圓",
+    "buy": 0.2767,
+    "sell": 0.2807
+},
+{
+    "currencyName": "歐元",
+    "buy": 34.6290,
+    "sell": 35.0290
+},
+{
+    "currencyName": "人民幣",
+    "buy": 4.2010,
+    "sell": 4.2510
+},
+{
+    "currencyName": "港幣",
+    "buy": 3.7660,
+    "sell": 3.8260
+},
+{
+    "currencyName": "英鎊",
+    "buy": 38.3650,
+    "sell": 38.7650
+},
+{
+    "currencyName": "澳幣",
+    "buy": 21.1250,
+    "sell": 21.3450
+},
+{
+    "currencyName": "紐元",
+    "buy": 19.4960,
+    "sell": 19.7160
+},
+{
+    "currencyName": "新加玻幣",
+    "buy": 21.3670,
+    "sell": 21.5670
+},
+{
+    "currencyName": "泰銖",
+    "buy": 0.9230,
+    "sell": 0.9650
+},
+{
+    "currencyName": "瑞法郎",
+    "buy": 32.1660,
+    "sell": 32.3860
+}]
