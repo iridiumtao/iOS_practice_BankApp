@@ -14,9 +14,11 @@
 		3C27A78224D85CC300DCBE82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C27A78124D85CC300DCBE82 /* Assets.xcassets */; };
 		3C27A78524D85CC300DCBE82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C27A78324D85CC300DCBE82 /* LaunchScreen.storyboard */; };
 		3C42E6B524DEFEA7003FC031 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C42E6B424DEFEA7003FC031 /* Currency.swift */; };
-		3C42E6B724DF0201003FC031 /* currency.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C42E6B624DF0201003FC031 /* currency.json */; };
+		3C42E6B724DF0201003FC031 /* Currency.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C42E6B624DF0201003FC031 /* Currency.json */; };
 		3C42E6BE24DF0A04003FC031 /* CurrencyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C42E6BD24DF0A04003FC031 /* CurrencyCollectionViewCell.swift */; };
 		3C42E6C024DF0A34003FC031 /* FunctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C42E6BF24DF0A34003FC031 /* FunctionCollectionViewCell.swift */; };
+		3C42E6C224E0755B003FC031 /* FunctionContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C42E6C124E0755B003FC031 /* FunctionContent.json */; };
+		3C42E6C424E07675003FC031 /* MainPageFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C42E6C324E07675003FC031 /* MainPageFunction.swift */; };
 		3CC34B2C24D877D80027FF85 /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC34B2B24D877D80027FF85 /* UserDatabase.swift */; };
 		3CC34B2E24D8785F0027FF85 /* MessageDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC34B2D24D8785F0027FF85 /* MessageDatabase.swift */; };
 		AB37E7B1556F3BA228772649 /* Pods_iOS_practice_BankApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BB825CD5567DA206482E3D /* Pods_iOS_practice_BankApp.framework */; };
@@ -32,9 +34,11 @@
 		3C27A78424D85CC300DCBE82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C27A78624D85CC300DCBE82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C42E6B424DEFEA7003FC031 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		3C42E6B624DF0201003FC031 /* currency.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currency.json; sourceTree = "<group>"; };
+		3C42E6B624DF0201003FC031 /* Currency.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Currency.json; sourceTree = "<group>"; };
 		3C42E6BD24DF0A04003FC031 /* CurrencyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCollectionViewCell.swift; sourceTree = "<group>"; };
 		3C42E6BF24DF0A34003FC031 /* FunctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCollectionViewCell.swift; sourceTree = "<group>"; };
+		3C42E6C124E0755B003FC031 /* FunctionContent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FunctionContent.json; sourceTree = "<group>"; };
+		3C42E6C324E07675003FC031 /* MainPageFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageFunction.swift; sourceTree = "<group>"; };
 		3CC34B2B24D877D80027FF85 /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		3CC34B2D24D8785F0027FF85 /* MessageDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDatabase.swift; sourceTree = "<group>"; };
 		463B09BF766C22047BA0A13E /* Pods-iOS_practice_BankApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_practice_BankApp.debug.xcconfig"; path = "Target Support Files/Pods-iOS_practice_BankApp/Pods-iOS_practice_BankApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,8 +88,9 @@
 		3C27A77724D85CC200DCBE82 /* iOS_practice_BankApp */ = {
 			isa = PBXGroup;
 			children = (
+				3C42E6C124E0755B003FC031 /* FunctionContent.json */,
 				3C42E6BC24DF09EA003FC031 /* CollectionViewCell */,
-				3C42E6B624DF0201003FC031 /* currency.json */,
+				3C42E6B624DF0201003FC031 /* Currency.json */,
 				3C27A77824D85CC200DCBE82 /* AppDelegate.swift */,
 				3C27A77A24D85CC200DCBE82 /* SceneDelegate.swift */,
 				3C27A77C24D85CC200DCBE82 /* ViewController.swift */,
@@ -96,6 +101,7 @@
 				3CC34B2B24D877D80027FF85 /* UserDatabase.swift */,
 				3CC34B2D24D8785F0027FF85 /* MessageDatabase.swift */,
 				3C42E6B424DEFEA7003FC031 /* Currency.swift */,
+				3C42E6C324E07675003FC031 /* MainPageFunction.swift */,
 			);
 			path = iOS_practice_BankApp;
 			sourceTree = "<group>";
@@ -177,7 +183,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C42E6B724DF0201003FC031 /* currency.json in Resources */,
+				3C42E6C224E0755B003FC031 /* FunctionContent.json in Resources */,
+				3C42E6B724DF0201003FC031 /* Currency.json in Resources */,
 				3C27A78524D85CC300DCBE82 /* LaunchScreen.storyboard in Resources */,
 				3C27A78224D85CC300DCBE82 /* Assets.xcassets in Resources */,
 				3C27A78024D85CC200DCBE82 /* Main.storyboard in Resources */,
@@ -233,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C42E6C424E07675003FC031 /* MainPageFunction.swift in Sources */,
 				3C42E6C024DF0A34003FC031 /* FunctionCollectionViewCell.swift in Sources */,
 				3C42E6B524DEFEA7003FC031 /* Currency.swift in Sources */,
 				3C27A77D24D85CC200DCBE82 /* ViewController.swift in Sources */,
@@ -388,6 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8FBP4YLUA;
 				INFOPLIST_FILE = iOS_practice_BankApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,6 +416,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8FBP4YLUA;
 				INFOPLIST_FILE = iOS_practice_BankApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

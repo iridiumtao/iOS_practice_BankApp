@@ -9,8 +9,12 @@
 import UIKit
 
 class CurrencyCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var currencyTypeImageView: UIImageView!
     @IBOutlet weak var currencyTypeLabel: UILabel!
     @IBOutlet weak var buyLabel: UILabel!
     @IBOutlet weak var sellLabel: UILabel!
     
+    
+    
 }
+

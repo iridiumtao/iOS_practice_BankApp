@@ -10,6 +10,9 @@ import Foundation
 
 struct Currency: Decodable {
     let currencyName: String
+    let image: String
     let buy: Double
     let sell: Double
 }
+
+
