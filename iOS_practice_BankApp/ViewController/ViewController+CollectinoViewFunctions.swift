@@ -1,79 +1,13 @@
 //
-//  ViewController.swift
+//  ViewController+CollectinoViewFunctions.swift
 //  iOS_practice_BankApp
 //
-//  Created by 歐東 on 2020/8/3.
+//  Created by 歐東 on 2020/8/20.
 //  Copyright © 2020 歐東. All rights reserved.
 //
-
 import UIKit
 
-class ViewController: UIViewController {
-    @IBOutlet weak var currencyCollectionView: UICollectionView!
-    @IBOutlet weak var functionCollectionView: UICollectionView!
-    
-    var currencyList: [Currency] = []
-    var functionList: [MainPageFunction] = []
-    
-    fileprivate func decodeJson() {
-        if let path1 = Bundle.main.path(forResource: "Currency", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path1), options: .alwaysMapped)
-                currencyList = try! JSONDecoder().decode([Currency].self, from: data)
-                print(currencyList)
-            } catch {
-                print("data read error!!!")
-            }
-        } else {
-            print("file path error!!!")
-        }
-        
-        if let path2 = Bundle.main.path(forResource: "FunctionContent", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path2), options: .alwaysMapped)
-                functionList = try! JSONDecoder().decode([MainPageFunction].self, from: data)
-            } catch {
-                print("data read error!!!")
-            }
-        } else {
-            print("file path error!!!")
-        }
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        currencyCollectionView.delegate = self
-        currencyCollectionView.dataSource = self
-        currencyCollectionView.isPagingEnabled = true;
-
-        functionCollectionView.delegate = self
-        functionCollectionView.dataSource = self
-        
-        decodeJson()
-        
-        // MARK: 根據螢幕大小調整 layout
-        // constraint 的調整是透過 LayoutHelper，於 Storyboard 的 Constraints 中
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let screenHeight = UIScreen.main.bounds.height
-        print(screenHeight)
-        // iPhone 8 Plus 的長度
-        if screenHeight > 736 {
-            layout.minimumLineSpacing = 30
-        } else {
-            layout.minimumLineSpacing = 10
-        }
-        functionCollectionView.collectionViewLayout = layout
-    }
-
-}
-
-// 能夠更改上方選單顯示的文字，比較好看
-private typealias CollectionView = ViewController
-
-extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == currencyCollectionView {
@@ -158,9 +92,7 @@ extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         
     }
-    
-    
-    
+
 }
 
 extension UIImageView{
