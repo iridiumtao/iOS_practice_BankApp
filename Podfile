@@ -8,5 +8,6 @@ target 'iOS_practice_BankApp' do
   # Pods for iOS_practice_BankApp
   pod 'RealmSwift'
   pod 'IQKeyboardManagerSwift'
+  pod 'LayoutHelper'
 
 end

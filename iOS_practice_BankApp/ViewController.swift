@@ -53,12 +53,26 @@ class ViewController: UIViewController {
         functionCollectionView.dataSource = self
         
         decodeJson()
+        
+        // MARK: 根據螢幕大小調整 layout
+        // constraint 的調整是透過 LayoutHelper，於 Storyboard 的 Constraints 中
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let screenHeight = UIScreen.main.bounds.height
+        print(screenHeight)
+        // iPhone 8 Plus 的長度
+        if screenHeight > 736 {
+            layout.minimumLineSpacing = 30
+        } else {
+            layout.minimumLineSpacing = 10
+        }
+        functionCollectionView.collectionViewLayout = layout
     }
 
 }
 
 // 能夠更改上方選單顯示的文字，比較好看
 private typealias CollectionView = ViewController
+
 extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -70,6 +84,8 @@ extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // 匯率的 cell
         if collectionView == currencyCollectionView {
             let cell =
                 collectionView.dequeueReusableCell(
@@ -81,11 +97,6 @@ extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource, 
             cell.buyLabel.text = String(format: "%.4f", currencyList[indexPath.row].buy)
             cell.sellLabel.text = String(format: "%.4f", currencyList[indexPath.row].sell)
             cell.currencyTypeImageView.image = UIImage(named: currencyList[indexPath.row].image)
-            
-            //cell.currencyTypeImageView.layer.shadowOpacity = 0.5
-            //cell.currencyTypeImageView.layer.shadowRadius = 5.0
-            //cell.currencyTypeImageView.clipsToBounds = true
-
             
             // 設定圓角
             cell.contentView.layer.cornerRadius = 10.0
@@ -105,16 +116,22 @@ extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource, 
             // euro icon by https://icons8.com/
             // nation icon made by Freepik from https://www.flaticon.com/
             
-            // TODO: 透過螢幕大小更改 constraints
             
             return cell
+            
+        // 功能的 cell
         } else {
             let cell =
               collectionView.dequeueReusableCell(
                   withReuseIdentifier: "Cell", for: indexPath)
             as! FunctionCollectionViewCell
             
+            
             cell.imageView.image = UIImage(named: functionList[indexPath.row].image)
+            
+            // 暫時先把圖片全部隱藏，之後弄成一個swichBar來開關
+            cell.imageView.blurImage(intensity: 0.2)
+
             cell.imageView.layer.cornerRadius = 10.0
             cell.imageView.layer.masksToBounds = true
             cell.label.text = functionList[indexPath.row].image
@@ -123,14 +140,17 @@ extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
     }
     
+    // 按下功能後跳轉頁面，並傳值
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == functionCollectionView {
             // todo seuge
         }
     }
     
+    // 設定每個cell的大小
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == functionCollectionView {
+            // 透過螢幕解析度計算 cell 大小
             let fullScreenSize = UIScreen.main.bounds.size
             return CGSize(width: (fullScreenSize.width - 60) / 3, height: (fullScreenSize.width - 60) / 3)
         } else {
@@ -143,3 +163,45 @@ extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource, 
     
 }
 
+extension UIImageView{
+    /// 直接模糊化圖片
+    func blurImage()
+    {
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        self.addSubview(blurEffectView)
+    }
+    /// 需要參數地模糊化圖片
+    func blurImage(intensity: CGFloat) {
+        let blurEffect = CustomIntensityVisualEffectView(effect: UIBlurEffect(style: .dark), intensity: intensity)
+        blurEffect.frame = self.bounds
+        blurEffect.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        // for supporting device rotation
+        self.addSubview(blurEffect)
+    }
+}
+
+/// 可調整參數地模糊化圖片
+class CustomIntensityVisualEffectView: UIVisualEffectView {
+
+    /// Create visual effect view with given effect and its intensity
+    ///
+    /// - Parameters:
+    ///   - effect: visual effect, eg UIBlurEffect(style: .dark)
+    ///   - intensity: custom intensity from 0.0 (no effect) to 1.0 (full effect) using linear scale
+    init(effect: UIVisualEffect, intensity: CGFloat) {
+        super.init(effect: nil)
+        animator = UIViewPropertyAnimator(duration: 1, curve: .linear) { [unowned self] in self.effect = effect }
+        animator.fractionComplete = intensity
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
+
+    private var animator: UIViewPropertyAnimator!
+
+}

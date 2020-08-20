@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i12-F4-2vY">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jiL-GJ-g9d">
-                                <rect key="frame" x="0.0" y="88" width="414" height="168"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="168"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="168" id="3LE-Ny-x96"/>
@@ -109,7 +109,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wlP-Gj-uQN">
-                                <rect key="frame" x="10" y="256" width="394" height="517"/>
+                                <rect key="frame" x="10" y="212" width="355" height="366"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Auk-tZ-Fbx">
                                     <size key="itemSize" width="128" height="128"/>
@@ -126,7 +126,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.text" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jv2-Az-olj">
-                                                    <rect key="frame" x="16" y="8.3333333333333321" width="96" height="96"/>
+                                                    <rect key="frame" x="16" y="8" width="96" height="96.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcV-ZS-vUT">
                                                     <rect key="frame" x="43" y="107" width="42" height="21"/>
@@ -155,7 +155,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27p-s8-sZm">
-                                <rect key="frame" x="0.0" y="773" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="578" width="375" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1s2-Hh-QlQ"/>
@@ -168,9 +168,33 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="27p-s8-sZm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bfk-aX-fnP"/>
-                            <constraint firstItem="wlP-Gj-uQN" firstAttribute="top" secondItem="jiL-GJ-g9d" secondAttribute="bottom" id="F3i-3t-iHu"/>
+                            <constraint firstItem="wlP-Gj-uQN" firstAttribute="top" secondItem="jiL-GJ-g9d" secondAttribute="bottom" id="F3i-3t-iHu" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXR">
+                                        <real key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXMax">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXS">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="27p-s8-sZm" secondAttribute="trailing" id="O9d-ek-OCM"/>
-                            <constraint firstItem="27p-s8-sZm" firstAttribute="top" secondItem="wlP-Gj-uQN" secondAttribute="bottom" id="ZM2-3O-nPV"/>
+                            <constraint firstItem="27p-s8-sZm" firstAttribute="top" secondItem="wlP-Gj-uQN" secondAttribute="bottom" id="ZM2-3O-nPV" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXR">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXMax">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="jiL-GJ-g9d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c8C-zl-bCp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jiL-GJ-g9d" secondAttribute="trailing" id="kTn-yw-eL8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wlP-Gj-uQN" secondAttribute="trailing" constant="10" id="rxF-XM-Qlc"/>
@@ -197,7 +221,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i12-F4-2vY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HBO-m3-Fyg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
