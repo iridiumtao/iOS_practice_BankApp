@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i12-F4-2vY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h9g-UB-NwF">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wlP-Gj-uQN">
-                                <rect key="frame" x="10" y="212" width="355" height="366"/>
+                                <rect key="frame" x="10" y="212" width="355" height="355"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Auk-tZ-Fbx">
                                     <size key="itemSize" width="128" height="128"/>
@@ -155,7 +155,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27p-s8-sZm">
-                                <rect key="frame" x="0.0" y="578" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="567" width="375" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1s2-Hh-QlQ"/>
@@ -164,6 +164,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jg-iY-deH">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="hmD-VL-86K" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXS">
+                                                <real key="value" value="85"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXR">
+                                                <real key="value" value="85"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXMax">
+                                                <real key="value" value="85"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="立即登入">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -197,62 +220,104 @@
                             </constraint>
                             <constraint firstItem="jiL-GJ-g9d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c8C-zl-bCp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jiL-GJ-g9d" secondAttribute="trailing" id="kTn-yw-eL8"/>
+                            <constraint firstItem="2Jg-iY-deH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lts-Y0-nHC"/>
+                            <constraint firstAttribute="bottom" secondItem="2Jg-iY-deH" secondAttribute="bottom" id="mFF-m4-Mcq"/>
+                            <constraint firstItem="2Jg-iY-deH" firstAttribute="top" secondItem="27p-s8-sZm" secondAttribute="bottom" id="pHT-Z9-8nd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wlP-Gj-uQN" secondAttribute="trailing" constant="10" id="rxF-XM-Qlc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="27p-s8-sZm" secondAttribute="bottom" id="s8i-uM-Xcb"/>
+                            <constraint firstItem="2Jg-iY-deH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sHJ-0k-lBH"/>
                             <constraint firstItem="jiL-GJ-g9d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sbb-Vm-kST"/>
                             <constraint firstItem="wlP-Gj-uQN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="yHg-Rx-tut"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gsd-HP-lRE"/>
                     <navigationItem key="navigationItem" id="UBR-7u-7qm"/>
                     <connections>
                         <outlet property="currencyCollectionView" destination="jiL-GJ-g9d" id="T9a-oX-v3a"/>
                         <outlet property="functionCollectionView" destination="wlP-Gj-uQN" id="ptl-gI-7Xi"/>
+                        <outlet property="loginButton" destination="2Jg-iY-deH" id="e6L-qR-Bv8"/>
+                        <segue destination="Ex6-gW-Woa" kind="show" id="L07-75-lll"/>
+                        <segue destination="dfu-kD-Gsf" kind="show" id="NfA-UQ-QoU"/>
+                        <segue destination="WCI-nX-MRs" kind="show" id="cW3-4O-z7W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3836" y="137.18140929535232"/>
+            <point key="canvasLocation" x="6562.3188405797109" y="135.9375"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Dk4-Fc-tgA">
+        <!--Login View Controller-->
+        <scene sceneID="nNa-el-409">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i12-F4-2vY" sceneMemberID="viewController">
+                <viewController id="Ex6-gW-Woa" customClass="LoginViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3vw-zi-Qvi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7r5-hQ-G3l"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lMf-ZB-ZnI"/>
+                    <connections>
+                        <segue destination="WCI-nX-MRs" kind="show" id="Y2j-ZJ-uF8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bsb-ob-5vv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7622" y="658"/>
+        </scene>
+        <!--Blank Page View Controller-->
+        <scene sceneID="Xeu-2J-Gcu">
+            <objects>
+                <viewController id="WCI-nX-MRs" customClass="BlankPageViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DaJ-Bg-xjU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EXT-M3-jQg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l4P-S9-Uqe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R5v-9t-fhs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8620" y="134"/>
+        </scene>
+        <!--Function View Controller-->
+        <scene sceneID="dXo-5D-nRb">
+            <objects>
+                <viewController id="dfu-kD-Gsf" customClass="FunctionViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zL6-KO-PDo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fHW-Oz-Hsg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zxY-iu-eYd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6D-nP-uCu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7622" y="-376"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="MHn-kz-XdW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h9g-UB-NwF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="bY3-v8-PuY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HBO-m3-Fyg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mG3-MR-x68">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="lq7-CL-Qbs" kind="relationship" relationship="rootViewController" id="s44-uh-97V"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1Z4-YU-5zg"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Yf-QN-sKb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9u-6X-eqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.5999999999999" y="137.18140929535232"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="p6x-m3-3TZ">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lq7-CL-Qbs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="uSZ-3n-wMx"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YEG-K1-Yyn">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="6D3-u3-hya"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xuK-09-yoM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2896.8000000000002" y="137.18140929535232"/>
+            <point key="canvasLocation" x="5653.6231884057979" y="136.60714285714286"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Y2j-ZJ-uF8"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.text" catalog="system" width="115" height="128"/>
     </resources>

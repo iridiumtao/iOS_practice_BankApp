@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var currencyCollectionView: UICollectionView!
     @IBOutlet weak var functionCollectionView: UICollectionView!
+    @IBOutlet weak var loginButton: UIButton!
     
     var currencyList: [Currency] = []
     var functionList: [MainPageFunction] = []
@@ -28,6 +29,8 @@ class ViewController: UIViewController {
         
         decodeJson()
         
+        
+        
         // MARK: 根據螢幕大小調整 layout
         // constraint 的調整是透過 LayoutHelper，於 Storyboard 的 Constraints 中
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -36,6 +39,7 @@ class ViewController: UIViewController {
         // iPhone 8 Plus 的長度
         if screenHeight > 736 {
             layout.minimumLineSpacing = 30
+            loginButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         } else {
             layout.minimumLineSpacing = 10
         }
