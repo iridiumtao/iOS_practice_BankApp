@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         currencyCollectionView.delegate = self
         currencyCollectionView.dataSource = self
@@ -28,22 +27,11 @@ class ViewController: UIViewController {
         functionCollectionView.dataSource = self
         
         decodeJson()
-        
-        
-        
-        // MARK: 根據螢幕大小調整 layout
-        // constraint 的調整是透過 LayoutHelper，於 Storyboard 的 Constraints 中
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let screenHeight = UIScreen.main.bounds.height
-        print(screenHeight)
-        // iPhone 8 Plus 的長度
-        if screenHeight > 736 {
-            layout.minimumLineSpacing = 30
-            loginButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
-        } else {
-            layout.minimumLineSpacing = 10
-        }
-        functionCollectionView.collectionViewLayout = layout
+        layoutSetting()
+    }
+    
+    @IBAction func loginButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "LoginSegue", sender: nil)
     }
     
     fileprivate func decodeJson() {
@@ -71,7 +59,22 @@ class ViewController: UIViewController {
         }
         
     }
-
+    
+    fileprivate func layoutSetting() {
+        // MARK: 根據螢幕大小調整 layout
+        // constraint 的調整是透過 LayoutHelper，於 Storyboard 的 Constraints 中
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let screenHeight = UIScreen.main.bounds.height
+        print(screenHeight)
+        // iPhone 8 Plus 的長度
+        if screenHeight > 736 {
+            layout.minimumLineSpacing = 30
+            loginButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        } else {
+            layout.minimumLineSpacing = 10
+        }
+        functionCollectionView.collectionViewLayout = layout
+    }
 }
 
 

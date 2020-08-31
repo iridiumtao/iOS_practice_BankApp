@@ -20,6 +20,7 @@
 		3C42E6C024DF0A34003FC031 /* FunctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C42E6BF24DF0A34003FC031 /* FunctionCollectionViewCell.swift */; };
 		3C42E6C224E0755B003FC031 /* FunctionContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C42E6C124E0755B003FC031 /* FunctionContent.json */; };
 		3C42E6C424E07675003FC031 /* MainPageFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C42E6C324E07675003FC031 /* MainPageFunction.swift */; };
+		3C6DFA5D24FD65C900735B87 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DFA5C24FD65C900735B87 /* DesignableUITextField.swift */; };
 		3CAE7BF124F68B6F0048B57F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE7BF024F68B6F0048B57F /* LoginViewController.swift */; };
 		3CAE7BF324F68B920048B57F /* FunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE7BF224F68B920048B57F /* FunctionViewController.swift */; };
 		3CAE7BF524F68BF30048B57F /* BlankPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE7BF424F68BF30048B57F /* BlankPageViewController.swift */; };
@@ -44,6 +45,7 @@
 		3C42E6BF24DF0A34003FC031 /* FunctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCollectionViewCell.swift; sourceTree = "<group>"; };
 		3C42E6C124E0755B003FC031 /* FunctionContent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FunctionContent.json; sourceTree = "<group>"; };
 		3C42E6C324E07675003FC031 /* MainPageFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageFunction.swift; sourceTree = "<group>"; };
+		3C6DFA5C24FD65C900735B87 /* DesignableUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		3CAE7BF024F68B6F0048B57F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3CAE7BF224F68B920048B57F /* FunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViewController.swift; sourceTree = "<group>"; };
 		3CAE7BF424F68BF30048B57F /* BlankPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankPageViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		3C27A77724D85CC200DCBE82 /* iOS_practice_BankApp */ = {
 			isa = PBXGroup;
 			children = (
+				3C6DFA5C24FD65C900735B87 /* DesignableUITextField.swift */,
 				3C39727824EE8941002C21C1 /* ViewController */,
 				3C42E6BC24DF09EA003FC031 /* CollectionViewCell */,
 				3C39727724EE892C002C21C1 /* DecodeJson */,
@@ -287,6 +290,7 @@
 				3CAE7BF524F68BF30048B57F /* BlankPageViewController.swift in Sources */,
 				3C39727524EE8822002C21C1 /* ViewController+CollectinoViewFunctions.swift in Sources */,
 				3C42E6BE24DF0A04003FC031 /* CurrencyCollectionViewCell.swift in Sources */,
+				3C6DFA5D24FD65C900735B87 /* DesignableUITextField.swift in Sources */,
 				3CC34B2E24D8785F0027FF85 /* MessageDatabase.swift in Sources */,
 				3CAE7BF124F68B6F0048B57F /* LoginViewController.swift in Sources */,
 			);
