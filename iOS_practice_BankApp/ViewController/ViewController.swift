@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     var currencyList: [Currency] = []
     var functionList: [MainPageFunction] = []
+    var functionSelectedIndexPath: Int? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -60,11 +60,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                   withReuseIdentifier: "Cell", for: indexPath)
             as! FunctionCollectionViewCell
             
-            
             cell.imageView.image = UIImage(named: functionList[indexPath.row].image)
             
             // 暫時先把圖片全部隱藏，之後弄成一個swichBar來開關
-            cell.imageView.blurImage(intensity: 0.2)
+            // 0.0 -> 不虛化；1.0 -> 剩下單色
+            cell.imageView.blurImage(intensity: 0.7)
 
             cell.imageView.layer.cornerRadius = 10.0
             cell.imageView.layer.masksToBounds = true
@@ -78,6 +78,21 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == functionCollectionView {
             // todo seuge
+            functionSelectedIndexPath = indexPath.row
+            performSegue(withIdentifier: "FunctionSegue", sender: nil)
+            
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FunctionSegue" {
+            let functionViewController = segue.destination as! FunctionViewController
+            if let selectedId = functionSelectedIndexPath {
+                functionViewController.setTitle(title: "功能 \(selectedId)")
+                functionViewController.setImage(imageName: functionList[selectedId].image)
+                functionViewController.setTextViewText(content: functionList[selectedId].content, url: functionList[selectedId].url)
+            }
+            
         }
     }
     

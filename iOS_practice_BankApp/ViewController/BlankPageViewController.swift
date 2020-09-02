@@ -9,7 +9,10 @@
 import UIKit
 
 class BlankPageViewController: UIViewController {
-
+    @IBOutlet weak var label: UILabel!
+    
+    var reseivedText = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

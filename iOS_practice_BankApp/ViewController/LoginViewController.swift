@@ -9,9 +9,6 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    var memberType = "mobileBank"
-    var rememberNationID = false
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var hintLabel: UILabel!
     @IBOutlet weak var nationalIDTextField: UITextField!
@@ -22,27 +19,22 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
+   
+    var memberType = "mobileBank"
+    var rememberNationID = false
+    
+    var mobileBankUserDatabase = MobileBankUserDatabase()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nationalIDTextField.layer.cornerRadius = nationalIDTextField.frame.height / 2
-        nationalIDTextField.layer.masksToBounds = true
-        nationalIDTextField.layer.borderWidth = 1.0
-        nationalIDTextField.layer.borderColor = UIColor.systemGray5.cgColor
+        initializeLayout()
         
-        userIDTextField.layer.cornerRadius = nationalIDTextField.frame.height / 2
-        userIDTextField.layer.masksToBounds = true
-        userIDTextField.layer.borderWidth = 1.0
-        userIDTextField.layer.borderColor = UIColor.systemGray5.cgColor
-        
-        passwordTextField.layer.cornerRadius = nationalIDTextField.frame.height / 2
-        passwordTextField.layer.masksToBounds = true
-        passwordTextField.layer.borderWidth = 1.0
-        passwordTextField.layer.borderColor = UIColor.systemGray5.cgColor
-        
-        rememberNationIDCheckButton.setImage(UIImage(systemName: "square"), for: .normal)
+        print(mobileBankUserDatabase.searchData(nationalID: "1", userID: "1", password: "1"))
 
     }
+    
+    
     @IBAction func rememberNationIDCheckButtonClicked(_ sender: UIButton) {
         rememberNationID = !rememberNationID
         if rememberNationID {
@@ -66,6 +58,23 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
+    fileprivate func initializeLayout() {
+           nationalIDTextField.layer.cornerRadius = nationalIDTextField.frame.height / 2
+           nationalIDTextField.layer.masksToBounds = true
+           nationalIDTextField.layer.borderWidth = 1.0
+           nationalIDTextField.layer.borderColor = UIColor.systemGray5.cgColor
+           
+           userIDTextField.layer.cornerRadius = nationalIDTextField.frame.height / 2
+           userIDTextField.layer.masksToBounds = true
+           userIDTextField.layer.borderWidth = 1.0
+           userIDTextField.layer.borderColor = UIColor.systemGray5.cgColor
+           
+           passwordTextField.layer.cornerRadius = nationalIDTextField.frame.height / 2
+           passwordTextField.layer.masksToBounds = true
+           passwordTextField.layer.borderWidth = 1.0
+           passwordTextField.layer.borderColor = UIColor.systemGray5.cgColor
+           
+           rememberNationIDCheckButton.setImage(UIImage(systemName: "square"), for: .normal)
+       }
 
 }

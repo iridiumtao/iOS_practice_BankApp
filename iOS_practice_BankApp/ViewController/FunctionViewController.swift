@@ -9,22 +9,41 @@
 import UIKit
 
 class FunctionViewController: UIViewController {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textView: UITextView!
+    
+    var receivedTitle = ""
+    var receivedImage = UIImage()
+    var receivedTextViewText = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        titleLabel.text = receivedTitle
+        imageView.image = receivedImage
+        textView.text = receivedTextViewText
+        
+
+        imageView.layer.masksToBounds = false
+        imageView.layer.shadowColor = UIColor.black.cgColor
+        imageView.layer.shadowOpacity = 1
+        imageView.layer.shadowRadius = 10
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setTitle(title: String) {
+        receivedTitle = title
     }
-    */
+    
+    func setImage(imageName: String) {
+        receivedImage = UIImage(named: imageName)!
+         
+    }
 
+    func setTextViewText(content: String, url: URL) {
+        receivedTextViewText = "內文：\n\(content)\n\n網址：\n\(url)"
+    }
+
+    
 }
