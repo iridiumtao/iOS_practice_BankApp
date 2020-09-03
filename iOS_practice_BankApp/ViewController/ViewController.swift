@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var currencyCollectionView: UICollectionView!
     @IBOutlet weak var functionCollectionView: UICollectionView!
     @IBOutlet weak var loginButton: UIButton!
@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     var currencyList: [Currency] = []
     var functionList: [MainPageFunction] = []
     var functionSelectedIndexPath: Int? = nil
+    
+    var imageIntensity = 10.0
+    //let blurView = APCustomBlurView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,48 @@ class ViewController: UIViewController {
         
         decodeJson()
         layoutSetting()
+        
+        // Additional bar button items
+        let button1 = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: self, action: #selector(notificationButtonClicked))
+        let button2 = UIBarButtonItem(image: UIImage(systemName: "qrcode"), style: .plain, target: self, action: #selector(qrcodeButtonClicked))
+        let button3 = UIBarButtonItem(image: UIImage(systemName: "location"), style: .plain, target: self, action: #selector(locationButtonClicked))
+
+        navigationItem.leftItemsSupplementBackButton = true
+        navigationItem.setLeftBarButton(button1, animated: true)
+        navigationItem.setRightBarButtonItems([button2, button3], animated: true)
+        
+        let longPressGestureRecognizer : UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress))
+        longPressGestureRecognizer.minimumPressDuration = 0.5
+        longPressGestureRecognizer.delegate = self
+        longPressGestureRecognizer.delaysTouchesBegan = true
+        self.functionCollectionView?.addGestureRecognizer(longPressGestureRecognizer)
+        
+        
+        self.navigationItem.title = "銀行App"
+        
+        // todo 沒網路時跳出通知
+    }
+    
+    @objc func notificationButtonClicked() {
+        performSegue(withIdentifier: "NotificationSegue", sender: nil)
+    }
+
+    @objc func qrcodeButtonClicked() {
+        performSegue(withIdentifier: "QrcodeSegue", sender: nil)
+    }
+
+    @objc func locationButtonClicked() {
+        performSegue(withIdentifier: "LocationSegue", sender: nil)
+    }
+    
+    @objc func onLongPress(gestureRecognizer : UILongPressGestureRecognizer) {
+        if (gestureRecognizer.state != UIGestureRecognizer.State.ended){
+            return
+        }
+
+        performSegue(withIdentifier: "ImageBlurAdjustSegue", sender: nil)
+        
+        
     }
     
     @IBAction func loginButtonClicked(_ sender: Any) {

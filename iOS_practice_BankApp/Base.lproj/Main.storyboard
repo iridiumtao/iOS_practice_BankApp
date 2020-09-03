@@ -241,6 +241,10 @@
                         <segue destination="Ex6-gW-Woa" kind="showDetail" identifier="LoginSegue" id="L07-75-lll"/>
                         <segue destination="dfu-kD-Gsf" kind="show" identifier="FunctionSegue" id="NfA-UQ-QoU"/>
                         <segue destination="WCI-nX-MRs" kind="show" id="cW3-4O-z7W"/>
+                        <segue destination="ldt-2P-6gx" kind="show" identifier="NotificationSegue" id="gYb-fA-Odr"/>
+                        <segue destination="TjA-ab-hRp" kind="show" identifier="QrcodeSegue" id="RqI-m4-9MK"/>
+                        <segue destination="GPs-Zf-Pal" kind="show" identifier="LocationSegue" id="epI-bO-lff"/>
+                        <segue destination="wDr-a5-W7i" kind="showDetail" identifier="ImageBlurAdjustSegue" id="3Y4-Id-SlO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -423,11 +427,11 @@
             <objects>
                 <viewController id="WCI-nX-MRs" customClass="BlankPageViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DaJ-Bg-xjU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="任意文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyO-Oj-jgB">
-                                <rect key="frame" x="153" y="313" width="69.5" height="21"/>
+                                <rect key="frame" x="153" y="323" width="69.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -447,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5v-9t-fhs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8609" y="136"/>
+            <point key="canvasLocation" x="8588" y="116"/>
         </scene>
         <!--Function View Controller-->
         <scene sceneID="dXo-5D-nRb">
@@ -464,14 +468,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T46-ev-HqT">
-                                <rect key="frame" x="67.5" y="120" width="240" height="240"/>
+                                <rect key="frame" x="67.5" y="105" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="LWa-aD-GuV"/>
                                     <constraint firstAttribute="height" constant="240" id="ZMt-J9-C1F"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IB4-2C-hkR">
-                                <rect key="frame" x="67.5" y="390" width="240" height="277"/>
+                                <rect key="frame" x="67.5" y="375" width="240" height="292"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Zl1-9u-K0h"/>
@@ -486,7 +490,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="IB4-2C-hkR" firstAttribute="centerX" secondItem="zL6-KO-PDo" secondAttribute="centerX" id="IBf-FY-Kl1"/>
-                            <constraint firstItem="T46-ev-HqT" firstAttribute="top" secondItem="bmk-jX-E7C" secondAttribute="bottom" constant="35" id="LZn-GS-3io"/>
+                            <constraint firstItem="T46-ev-HqT" firstAttribute="top" secondItem="bmk-jX-E7C" secondAttribute="bottom" constant="20" id="LZn-GS-3io"/>
                             <constraint firstItem="bmk-jX-E7C" firstAttribute="centerX" secondItem="zL6-KO-PDo" secondAttribute="centerX" id="WDG-Ww-fKk"/>
                             <constraint firstItem="fHW-Oz-Hsg" firstAttribute="bottom" secondItem="IB4-2C-hkR" secondAttribute="bottom" id="gN5-kA-y9Y"/>
                             <constraint firstItem="T46-ev-HqT" firstAttribute="centerX" secondItem="zL6-KO-PDo" secondAttribute="centerX" id="nIK-ev-TdO"/>
@@ -505,6 +509,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6D-nP-uCu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7621.6000000000004" y="-376.46176911544228"/>
+        </scene>
+        <!--Image Blur Adjust View Controller-->
+        <scene sceneID="XKQ-fs-Ubm">
+            <objects>
+                <viewController id="wDr-a5-W7i" customClass="ImageBlurAdjustViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DKn-JI-TSQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dsz-O7-vOK">
+                                <rect key="frame" x="67.5" y="152.5" width="240" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="uQv-RA-Mez"/>
+                                    <constraint firstAttribute="height" constant="180" id="uod-L5-NCK"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ecf-hA-6OJ">
+                                <rect key="frame" x="65.5" y="357.5" width="244" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="doq-oq-uBc"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="onSliderValueChanged:" destination="wDr-a5-W7i" eventType="valueChanged" id="jV1-dU-yPs"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ecf-hA-6OJ" firstAttribute="top" secondItem="Dsz-O7-vOK" secondAttribute="bottom" constant="25" id="SGh-wo-7CE"/>
+                            <constraint firstItem="Dsz-O7-vOK" firstAttribute="centerX" secondItem="DKn-JI-TSQ" secondAttribute="centerX" id="qCQ-u5-rn3"/>
+                            <constraint firstItem="Ecf-hA-6OJ" firstAttribute="centerX" secondItem="DKn-JI-TSQ" secondAttribute="centerX" id="wJv-tN-IVI"/>
+                            <constraint firstItem="Dsz-O7-vOK" firstAttribute="centerY" secondItem="DKn-JI-TSQ" secondAttribute="centerY" multiplier="0.75" id="zt6-RE-N9F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jVf-Ec-gnt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="p7o-22-IF2"/>
+                    <connections>
+                        <outlet property="imageView" destination="Dsz-O7-vOK" id="166-6s-4Su"/>
+                        <outlet property="slider" destination="Ecf-hA-6OJ" id="zEy-Ds-Pb2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jd2-sK-hRh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6561" y="-752"/>
         </scene>
         <!--Item-->
         <scene sceneID="MHn-kz-XdW">
@@ -525,9 +573,57 @@
             </objects>
             <point key="canvasLocation" x="5653.6231884057979" y="136.60714285714286"/>
         </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="1nd-eE-0td">
+            <objects>
+                <viewController id="ldt-2P-6gx" customClass="NotificationViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O5J-ra-Tm3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9rk-96-yda"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jjf-3P-Rve"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yw8-0K-j71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7622" y="-1174"/>
+        </scene>
+        <!--Qrcode View Controller-->
+        <scene sceneID="N86-BZ-Ter">
+            <objects>
+                <viewController id="TjA-ab-hRp" customClass="QrcodeViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PE2-fn-ey3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Oy3-er-fly"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NZn-Rt-3xh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QE5-LZ-fHX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8431" y="-1174"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="dii-Uc-3tv">
+            <objects>
+                <viewController id="GPs-Zf-Pal" customClass="LocationViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5mW-TQ-W1e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="lTP-eR-gcq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LGY-1Z-j1l"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ExW-pK-9Rq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9254" y="-1174"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Y2j-ZJ-uF8"/>
+        <segue reference="cW3-4O-z7W"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.text" catalog="system" width="115" height="128"/>

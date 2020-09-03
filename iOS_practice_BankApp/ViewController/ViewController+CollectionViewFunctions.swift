@@ -62,9 +62,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             
             cell.imageView.image = UIImage(named: functionList[indexPath.row].image)
             
-            // 暫時先把圖片全部隱藏，之後弄成一個swichBar來開關
-            // 0.0 -> 不虛化；1.0 -> 剩下單色
-            cell.imageView.blurImage(intensity: 0.7)
+            cell.imageIntensity = imageIntensity
+            cell.blurImage()
+            
+            //print("imageIntensity cell \(indexPath.row) \(self.imageIntensity)")
 
             cell.imageView.layer.cornerRadius = 10.0
             cell.imageView.layer.masksToBounds = true
@@ -85,14 +86,31 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "FunctionSegue" {
+
+        switch segue.identifier {
+        case "FunctionSegue":
             let functionViewController = segue.destination as! FunctionViewController
             if let selectedId = functionSelectedIndexPath {
-                functionViewController.setTitle(title: "功能 \(selectedId)")
+                functionViewController.setTitle(title: "功能 \(selectedId + 1)")
                 functionViewController.setImage(imageName: functionList[selectedId].image)
                 functionViewController.setTextViewText(content: functionList[selectedId].content, url: functionList[selectedId].url)
             }
             
+        case "ImageBlurAdjustSegue":
+            let imageBlurAdjustViewController = segue.destination as! ImageBlurAdjustViewController
+            print("imageIntensity prepare \(self.imageIntensity)")
+            imageBlurAdjustViewController.sliderValue = imageIntensity
+            imageBlurAdjustViewController.imageBlurAdjustCompletionHandler = { value in
+                self.imageIntensity = value
+                    
+                print("imageIntensity completion \(self.imageIntensity)")
+                self.functionCollectionView.reloadData()
+
+            }
+            
+            break
+        default:
+            break
         }
     }
     
@@ -107,48 +125,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         
     }
+    
 
-}
-
-extension UIImageView{
-    /// 直接模糊化圖片
-    func blurImage()
-    {
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = self.bounds
-
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
-        self.addSubview(blurEffectView)
-    }
-    /// 需要參數地模糊化圖片
-    func blurImage(intensity: CGFloat) {
-        let blurEffect = CustomIntensityVisualEffectView(effect: UIBlurEffect(style: .dark), intensity: intensity)
-        blurEffect.frame = self.bounds
-        blurEffect.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        // for supporting device rotation
-        self.addSubview(blurEffect)
-    }
-}
-
-/// 可調整參數地模糊化圖片
-class CustomIntensityVisualEffectView: UIVisualEffectView {
-
-    /// Create visual effect view with given effect and its intensity
-    ///
-    /// - Parameters:
-    ///   - effect: visual effect, eg UIBlurEffect(style: .dark)
-    ///   - intensity: custom intensity from 0.0 (no effect) to 1.0 (full effect) using linear scale
-    init(effect: UIVisualEffect, intensity: CGFloat) {
-        super.init(effect: nil)
-        animator = UIViewPropertyAnimator(duration: 1, curve: .linear) { [unowned self] in self.effect = effect }
-        animator.fractionComplete = intensity
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError()
-    }
-
-    private var animator: UIViewPropertyAnimator!
 
 }
