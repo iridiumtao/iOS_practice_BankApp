@@ -11,7 +11,7 @@ import UIKit
 class BlankPageViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
-    var reseivedText = ""
+    var receivedText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

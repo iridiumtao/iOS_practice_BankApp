@@ -13,7 +13,7 @@
 		3C27A78024D85CC200DCBE82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C27A77E24D85CC200DCBE82 /* Main.storyboard */; };
 		3C27A78224D85CC300DCBE82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C27A78124D85CC300DCBE82 /* Assets.xcassets */; };
 		3C27A78524D85CC300DCBE82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C27A78324D85CC300DCBE82 /* LaunchScreen.storyboard */; };
-		3C39727524EE8822002C21C1 /* ViewController+CollectinoViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C39727424EE8822002C21C1 /* ViewController+CollectinoViewFunctions.swift */; };
+		3C39727524EE8822002C21C1 /* ViewController+CollectionViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C39727424EE8822002C21C1 /* ViewController+CollectionViewFunctions.swift */; };
 		3C42E6B524DEFEA7003FC031 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C42E6B424DEFEA7003FC031 /* Currency.swift */; };
 		3C42E6B724DF0201003FC031 /* Currency.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C42E6B624DF0201003FC031 /* Currency.json */; };
 		3C42E6BE24DF0A04003FC031 /* CurrencyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C42E6BD24DF0A04003FC031 /* CurrencyCollectionViewCell.swift */; };
@@ -39,7 +39,7 @@
 		3C27A78124D85CC300DCBE82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C27A78424D85CC300DCBE82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C27A78624D85CC300DCBE82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C39727424EE8822002C21C1 /* ViewController+CollectinoViewFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectinoViewFunctions.swift"; sourceTree = "<group>"; };
+		3C39727424EE8822002C21C1 /* ViewController+CollectionViewFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectionViewFunctions.swift"; sourceTree = "<group>"; };
 		3C42E6B424DEFEA7003FC031 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		3C42E6B624DF0201003FC031 /* Currency.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Currency.json; sourceTree = "<group>"; };
 		3C42E6BD24DF0A04003FC031 /* CurrencyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				3C27A77C24D85CC200DCBE82 /* ViewController.swift */,
-				3C39727424EE8822002C21C1 /* ViewController+CollectinoViewFunctions.swift */,
+				3C39727424EE8822002C21C1 /* ViewController+CollectionViewFunctions.swift */,
 				3CAE7BF024F68B6F0048B57F /* LoginViewController.swift */,
 				3CAE7BF224F68B920048B57F /* FunctionViewController.swift */,
 				3CAE7BF424F68BF30048B57F /* BlankPageViewController.swift */,
@@ -292,7 +292,7 @@
 				3C27A77924D85CC200DCBE82 /* AppDelegate.swift in Sources */,
 				3C27A77B24D85CC200DCBE82 /* SceneDelegate.swift in Sources */,
 				3CAE7BF524F68BF30048B57F /* BlankPageViewController.swift in Sources */,
-				3C39727524EE8822002C21C1 /* ViewController+CollectinoViewFunctions.swift in Sources */,
+				3C39727524EE8822002C21C1 /* ViewController+CollectionViewFunctions.swift in Sources */,
 				3C42E6BE24DF0A04003FC031 /* CurrencyCollectionViewCell.swift in Sources */,
 				3C6DFA5D24FD65C900735B87 /* DesignableUITextField.swift in Sources */,
 				3CC34B2E24D8785F0027FF85 /* MessageDatabase.swift in Sources */,

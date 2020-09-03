@@ -56,6 +56,8 @@ class LoginViewController: UIViewController {
         } else {
             memberType = "creditCard"
         }
+        
+        
     }
     
     fileprivate func initializeLayout() {

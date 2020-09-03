@@ -1,5 +1,5 @@
 //
-//  ViewController+CollectinoViewFunctions.swift
+//  ViewController+CollectionViewFunctions.swift
 //  iOS_practice_BankApp
 //
 //  Created by 歐東 on 2020/8/20.
@@ -77,7 +77,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     // 按下功能後跳轉頁面，並傳值
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == functionCollectionView {
-            // todo seuge
+            // todo segue
             functionSelectedIndexPath = indexPath.row
             performSegue(withIdentifier: "FunctionSegue", sender: nil)
             
