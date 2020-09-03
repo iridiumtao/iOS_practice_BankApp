@@ -18,7 +18,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var functionSelectedIndexPath: Int? = nil
     
     var imageIntensity = 10.0
-    //let blurView = APCustomBlurView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,27 +32,30 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         decodeJson()
         layoutSetting()
         
-        // Additional bar button items
-        let button1 = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: self, action: #selector(notificationButtonClicked))
-        let button2 = UIBarButtonItem(image: UIImage(systemName: "qrcode"), style: .plain, target: self, action: #selector(qrcodeButtonClicked))
-        let button3 = UIBarButtonItem(image: UIImage(systemName: "location"), style: .plain, target: self, action: #selector(locationButtonClicked))
+        // Navigation bar 按鈕
+        let notificationButton = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: self, action: #selector(notificationButtonClicked))
+        let qrcodeButton = UIBarButtonItem(image: UIImage(systemName: "qrcode"), style: .plain, target: self, action: #selector(qrcodeButtonClicked))
+        let locationButton = UIBarButtonItem(image: UIImage(systemName: "location"), style: .plain, target: self, action: #selector(locationButtonClicked))
 
+        // 將按鈕加入 navigation bar
         navigationItem.leftItemsSupplementBackButton = true
-        navigationItem.setLeftBarButton(button1, animated: true)
-        navigationItem.setRightBarButtonItems([button2, button3], animated: true)
+        navigationItem.setLeftBarButton(notificationButton, animated: true)
+        navigationItem.setRightBarButtonItems([qrcodeButton, locationButton], animated: true)
         
+        // 長按手勢(用於顯示圖片虛化的頁面)
         let longPressGestureRecognizer : UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress))
         longPressGestureRecognizer.minimumPressDuration = 0.5
         longPressGestureRecognizer.delegate = self
         longPressGestureRecognizer.delaysTouchesBegan = true
         self.functionCollectionView?.addGestureRecognizer(longPressGestureRecognizer)
         
-        
+        // 標題
         self.navigationItem.title = "銀行App"
         
         // todo 沒網路時跳出通知
     }
     
+    // Navigation bar 的按鈕們
     @objc func notificationButtonClicked() {
         performSegue(withIdentifier: "NotificationSegue", sender: nil)
     }
@@ -67,15 +69,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func onLongPress(gestureRecognizer : UILongPressGestureRecognizer) {
+        // 抄來的，我也不知道是什麼
         if (gestureRecognizer.state != UIGestureRecognizer.State.ended){
             return
         }
-
         performSegue(withIdentifier: "ImageBlurAdjustSegue", sender: nil)
-        
-        
     }
     
+    // 登入按鈕
+    // 如果已經登入了，要變成立即登出，跳出Alert確認
     @IBAction func loginButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "LoginSegue", sender: nil)
     }

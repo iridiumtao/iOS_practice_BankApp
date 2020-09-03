@@ -7,6 +7,7 @@
 //
 import UIKit
 
+// ViewController 中 CollectionView 相關 function 以及 prepare for segue
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -50,7 +51,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             // euro icon by https://icons8.com/
             // nation icon made by Freepik from https://www.flaticon.com/
             
-            
             return cell
             
         // 功能的 cell
@@ -62,10 +62,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             
             cell.imageView.image = UIImage(named: functionList[indexPath.row].image)
             
-            cell.imageIntensity = imageIntensity
-            cell.blurImage()
-            
-            //print("imageIntensity cell \(indexPath.row) \(self.imageIntensity)")
+            cell.blurImage(intensity: CGFloat(imageIntensity))
 
             cell.imageView.layer.cornerRadius = 10.0
             cell.imageView.layer.masksToBounds = true
@@ -85,11 +82,24 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
     }
     
+    // 設定每個cell的大小
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == functionCollectionView {
+            // 透過螢幕解析度計算 cell 大小
+            let fullScreenSize = UIScreen.main.bounds.size
+            return CGSize(width: (fullScreenSize.width - 60) / 3, height: (fullScreenSize.width - 60) / 3)
+        } else {
+            return CGSize(width: 192, height: 128)
+        }
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         switch segue.identifier {
         case "FunctionSegue":
             let functionViewController = segue.destination as! FunctionViewController
+            
+            // 設定要顯示的資料
             if let selectedId = functionSelectedIndexPath {
                 functionViewController.setTitle(title: "功能 \(selectedId + 1)")
                 functionViewController.setImage(imageName: functionList[selectedId].image)
@@ -113,19 +123,5 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             break
         }
     }
-    
-    // 設定每個cell的大小
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == functionCollectionView {
-            // 透過螢幕解析度計算 cell 大小
-            let fullScreenSize = UIScreen.main.bounds.size
-            return CGSize(width: (fullScreenSize.width - 60) / 3, height: (fullScreenSize.width - 60) / 3)
-        } else {
-            return CGSize(width: 192, height: 128)
-        }
-        
-    }
-    
-
 
 }

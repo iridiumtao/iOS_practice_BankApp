@@ -13,8 +13,5 @@ class CurrencyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var currencyTypeLabel: UILabel!
     @IBOutlet weak var buyLabel: UILabel!
     @IBOutlet weak var sellLabel: UILabel!
-    
-    
-    
 }
 
