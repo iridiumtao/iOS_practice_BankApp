@@ -16,6 +16,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var currencyList: [Currency] = []
     var functionList: [MainPageFunction] = []
     var functionSelectedIndexPath: Int? = nil
+    var blankPageText = ""
+    var isLogin = false
     
     var imageIntensity = 10.0
     
@@ -57,15 +59,22 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // Navigation bar 的按鈕們
     @objc func notificationButtonClicked() {
-        performSegue(withIdentifier: "NotificationSegue", sender: nil)
+        if isLogin {
+            performSegue(withIdentifier: "NotificationSegue", sender: nil)
+        } else {
+            makeAlert(title: "提示訊息", message: "你必須登入才能查看通知。")
+        }
+        
     }
 
     @objc func qrcodeButtonClicked() {
-        performSegue(withIdentifier: "QrcodeSegue", sender: nil)
+        blankPageText = "此功能尚未開放"
+        performSegue(withIdentifier: "BlankPageSegue", sender: nil)
     }
 
     @objc func locationButtonClicked() {
-        performSegue(withIdentifier: "LocationSegue", sender: nil)
+        blankPageText = "此功能尚未開放"
+        performSegue(withIdentifier: "BlankPageSegue", sender: nil)
     }
     
     @objc func onLongPress(gestureRecognizer : UILongPressGestureRecognizer) {
@@ -79,7 +88,39 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     // 登入按鈕
     // 如果已經登入了，要變成立即登出，跳出Alert確認
     @IBAction func loginButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: "LoginSegue", sender: nil)
+        if isLogin{
+            let controller = UIAlertController(title: "提示訊息", message: "確定要登出嗎", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "確定", style: .destructive, handler: {(_) in
+                self.logout()
+            })
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+            controller.addAction(okAction)
+            controller.addAction(cancelAction)
+            present(controller, animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "LoginSegue", sender: nil)
+        }
+    }
+    
+    func successfullyLoggedIn(_ memberType: String, _ UUID: String) {
+        isLogin = true
+        if memberType == "mobileBank" {
+            let mobileBankUserDatabase = MobileBankUserDatabase()
+            
+            let username = mobileBankUserDatabase.getUsername(UUID: UUID)
+            
+            self.loginButton.setTitle("歡迎回來，\(username)。點擊此登出帳戶", for: .normal)
+            self.loginButton.backgroundColor = UIColor.red
+        } else {
+            self.loginButton.setTitle("登出", for: .normal)
+            self.loginButton.backgroundColor = UIColor.red
+        }
+    }
+    
+    func logout() {
+        isLogin = false
+        loginButton.setTitle("立即登入", for: .normal)
+        loginButton.backgroundColor = UIColor.link
     }
     
     fileprivate func decodeJson() {
@@ -87,7 +128,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path1), options: .alwaysMapped)
                 currencyList = try! JSONDecoder().decode([Currency].self, from: data)
-                print(currencyList)
             } catch {
                 print("data read error!!!")
             }
@@ -113,7 +153,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // constraint 的調整是透過 LayoutHelper，於 Storyboard 的 Constraints 中
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let screenHeight = UIScreen.main.bounds.height
-        print(screenHeight)
         // iPhone 8 Plus 的長度
         if screenHeight > 736 {
             layout.minimumLineSpacing = 30

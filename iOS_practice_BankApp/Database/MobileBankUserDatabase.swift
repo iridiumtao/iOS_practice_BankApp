@@ -37,6 +37,29 @@ struct MobileBankUserDatabase {
         return "1"
     }
     
+    func createUser() {
+        let user = RLM_MobileBankUser()
+        user.nationalID = "A123456789"
+        user.userID = "A1234567"
+        user.password = "B1234567"
+        user.username = "Test user"
+        try! realm.write {
+            realm.add(user)
+        }
+    }
+    
+    func getUsername(UUID: String) -> String {
+        let results = realm.objects(RLM_MobileBankUser.self).filter("uuid CONTAINS '\(UUID)'")
+        if results.count != 1 {
+            return ""
+        } else {
+            for result in results {
+                return result.username
+            }
+        }
+        return ""
+    }
+    
 }
 
 class RLM_MobileBankUser : Object {

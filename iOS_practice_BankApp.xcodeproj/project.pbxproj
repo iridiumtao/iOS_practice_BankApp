@@ -21,7 +21,9 @@
 		3C42E6C024DF0A34003FC031 /* FunctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C42E6BF24DF0A34003FC031 /* FunctionCollectionViewCell.swift */; };
 		3C42E6C224E0755B003FC031 /* FunctionContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C42E6C124E0755B003FC031 /* FunctionContent.json */; };
 		3C42E6C424E07675003FC031 /* MainPageFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C42E6C324E07675003FC031 /* MainPageFunction.swift */; };
+		3C51C7492502A44000E2E046 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C51C7482502A44000E2E046 /* NotificationTableViewCell.swift */; };
 		3C6DFA5D24FD65C900735B87 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DFA5C24FD65C900735B87 /* DesignableUITextField.swift */; };
+		3C7932C02502B6B800CE42FC /* CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7932BF2502B6B800CE42FC /* CustomFunctions.swift */; };
 		3C7E7E4124FF98A800B9F2A2 /* CreditCardUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E7E4024FF98A800B9F2A2 /* CreditCardUserDatabase.swift */; };
 		3CADB9322501096700623FFA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB9312501096700623FFA /* NotificationViewController.swift */; };
 		3CADB934250109A000623FFA /* QrcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB933250109A000623FFA /* QrcodeViewController.swift */; };
@@ -52,7 +54,9 @@
 		3C42E6BF24DF0A34003FC031 /* FunctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCollectionViewCell.swift; sourceTree = "<group>"; };
 		3C42E6C124E0755B003FC031 /* FunctionContent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FunctionContent.json; sourceTree = "<group>"; };
 		3C42E6C324E07675003FC031 /* MainPageFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageFunction.swift; sourceTree = "<group>"; };
+		3C51C7482502A44000E2E046 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		3C6DFA5C24FD65C900735B87 /* DesignableUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
+		3C7932BF2502B6B800CE42FC /* CustomFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFunctions.swift; sourceTree = "<group>"; };
 		3C7E7E4024FF98A800B9F2A2 /* CreditCardUserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardUserDatabase.swift; sourceTree = "<group>"; };
 		3CADB9312501096700623FFA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		3CADB933250109A000623FFA /* QrcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrcodeViewController.swift; sourceTree = "<group>"; };
@@ -112,8 +116,9 @@
 			children = (
 				3C6DFA5C24FD65C900735B87 /* DesignableUITextField.swift */,
 				3C1D6B2E250127400097960D /* APCustomBlurView.swift */,
+				3C7932BF2502B6B800CE42FC /* CustomFunctions.swift */,
 				3C39727824EE8941002C21C1 /* ViewController */,
-				3C42E6BC24DF09EA003FC031 /* CollectionViewCell */,
+				3C42E6BC24DF09EA003FC031 /* ReuseableViewCells */,
 				3C39727724EE892C002C21C1 /* DecodeJson */,
 				3C39727624EE890C002C21C1 /* Database */,
 				3C42E6B624DF0201003FC031 /* Currency.json */,
@@ -161,13 +166,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		3C42E6BC24DF09EA003FC031 /* CollectionViewCell */ = {
+		3C42E6BC24DF09EA003FC031 /* ReuseableViewCells */ = {
 			isa = PBXGroup;
 			children = (
 				3C42E6BD24DF0A04003FC031 /* CurrencyCollectionViewCell.swift */,
 				3C42E6BF24DF0A34003FC031 /* FunctionCollectionViewCell.swift */,
+				3C51C7482502A44000E2E046 /* NotificationTableViewCell.swift */,
 			);
-			path = CollectionViewCell;
+			path = ReuseableViewCells;
 			sourceTree = "<group>";
 		};
 		3CADB937250109C600623FFA /* Navigationbar */ = {
@@ -305,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C51C7492502A44000E2E046 /* NotificationTableViewCell.swift in Sources */,
 				3CAE7BF324F68B920048B57F /* FunctionViewController.swift in Sources */,
 				3C42E6C424E07675003FC031 /* MainPageFunction.swift in Sources */,
 				3CADB93925010EFD00623FFA /* ImageBlurAdjustViewController.swift in Sources */,
@@ -312,6 +319,7 @@
 				3CADB9322501096700623FFA /* NotificationViewController.swift in Sources */,
 				3C1D6B2F250127400097960D /* APCustomBlurView.swift in Sources */,
 				3C42E6C024DF0A34003FC031 /* FunctionCollectionViewCell.swift in Sources */,
+				3C7932C02502B6B800CE42FC /* CustomFunctions.swift in Sources */,
 				3C7E7E4124FF98A800B9F2A2 /* CreditCardUserDatabase.swift in Sources */,
 				3C42E6B524DEFEA7003FC031 /* Currency.swift in Sources */,
 				3C27A77D24D85CC200DCBE82 /* ViewController.swift in Sources */,
@@ -400,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -454,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

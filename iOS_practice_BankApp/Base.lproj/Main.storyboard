@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h9g-UB-NwF">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h9g-UB-NwF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jiL-GJ-g9d">
-                                <rect key="frame" x="0.0" y="44" width="375" height="168"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="168"/>
                                 <color key="backgroundColor" white="0.9826359160958904" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="168" id="3LE-Ny-x96"/>
@@ -109,7 +109,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wlP-Gj-uQN">
-                                <rect key="frame" x="10" y="212" width="355" height="355"/>
+                                <rect key="frame" x="10" y="256" width="394" height="540"/>
                                 <color key="backgroundColor" white="0.9805222602739726" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Auk-tZ-Fbx">
                                     <size key="itemSize" width="128" height="128"/>
@@ -155,7 +155,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  最新快訊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27p-s8-sZm">
-                                <rect key="frame" x="0.0" y="567" width="69.5" height="40"/>
+                                <rect key="frame" x="0.0" y="796" width="69.5" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1s2-Hh-QlQ"/>
@@ -165,7 +165,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jg-iY-deH">
-                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="hmD-VL-86K" customClass="NSLayoutHelper" customModule="LayoutHelper">
@@ -191,7 +191,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuY-hH-PgF">
-                                <rect key="frame" x="69.5" y="567" width="15" height="40"/>
+                                <rect key="frame" x="69.5" y="796" width="15" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMu-Fw-C0c">
                                         <rect key="frame" x="7" y="7" width="1" height="26"/>
@@ -211,7 +211,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="2020/08/19  An object that stores color data and sometimes opacity." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3B7-fC-utW">
-                                <rect key="frame" x="84.5" y="567" width="290.5" height="40"/>
+                                <rect key="frame" x="84.5" y="796" width="329.5" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -289,11 +289,11 @@
             <objects>
                 <viewController id="Ex6-gW-Woa" customClass="LoginViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3vw-zi-Qvi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="e4J-sd-i8H">
-                                <rect key="frame" x="32" y="30" width="311" height="32"/>
+                                <rect key="frame" x="32" y="30" width="350" height="32"/>
                                 <segments>
                                     <segment title="行動銀行會員"/>
                                     <segment title="信用卡會員"/>
@@ -303,13 +303,13 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入銀行/行動銀行 會員代號與密碼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9k-pY-p5H">
-                                <rect key="frame" x="60.5" y="86" width="254" height="18"/>
+                                <rect key="frame" x="80" y="86" width="254" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="身分證字號/統一編號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Hb-We-ekU" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
-                                <rect key="frame" x="32" y="139" width="311" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A123456789" borderStyle="roundedRect" placeholder="身分證字號/統一編號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Hb-We-ekU" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
+                                <rect key="frame" x="32" y="139" width="350" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lmb-CP-zr3"/>
                                 </constraints>
@@ -322,8 +322,8 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="square.and.pencil" catalog="system"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用戶代號(英文大小視為不同)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-e9-KRC" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
-                                <rect key="frame" x="32" y="204" width="311" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A1234567" borderStyle="roundedRect" placeholder="用戶代號(英文大小視為不同)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-e9-KRC" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
+                                <rect key="frame" x="32" y="204" width="350" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="UXv-mL-HSA"/>
                                 </constraints>
@@ -336,8 +336,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="理財密碼(英文大小寫視為不同)" textAlignment="natural" minimumFontSize="17" background="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PbL-dq-Woq" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
-                                <rect key="frame" x="32" y="269" width="311" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="B1234567" borderStyle="roundedRect" placeholder="理財密碼(英文大小寫視為不同)" textAlignment="natural" minimumFontSize="17" background="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PbL-dq-Woq" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
+                                <rect key="frame" x="32" y="269" width="350" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7qV-ql-1Ch"/>
                                 </constraints>
@@ -351,7 +351,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMv-cb-2dG">
-                                <rect key="frame" x="185" y="324" width="158" height="28"/>
+                                <rect key="frame" x="224" y="324" width="158" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="tintColor" red="0.77757989900000002" green="0.77757989900000002" blue="0.77757989900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="  記住身分證字號/統一編號">
@@ -363,7 +363,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPa-M4-Cl8">
-                                <rect key="frame" x="187" y="585" width="1" height="15"/>
+                                <rect key="frame" x="206.5" y="746" width="1" height="15"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="afL-Ma-lPG"/>
@@ -371,7 +371,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRz-v2-T5P">
-                                <rect key="frame" x="32" y="447.5" width="311" height="45"/>
+                                <rect key="frame" x="32" y="608.5" width="350" height="45"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="KAd-pm-5DK"/>
@@ -379,12 +379,15 @@
                                 <state key="normal" title="立即登入">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.18431372549019609" green="0.5725490196078431" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="loginButtonClicked:" destination="Ex6-gW-Woa" eventType="touchUpInside" id="4VZ-Oo-yUq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6t0-0L-g0B">
-                                <rect key="frame" x="32" y="512.5" width="311" height="45"/>
+                                <rect key="frame" x="32" y="673.5" width="350" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="fym-hW-PHm"/>
@@ -397,7 +400,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWY-Ne-LlG">
-                                <rect key="frame" x="48" y="577.5" width="92" height="30"/>
+                                <rect key="frame" x="57.5" y="738.5" width="92" height="30"/>
                                 <state key="normal" title="如何申請會員">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -406,7 +409,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKL-Zo-6pu">
-                                <rect key="frame" x="250.5" y="577.5" width="62" height="30"/>
+                                <rect key="frame" x="279.5" y="738.5" width="62" height="30"/>
                                 <state key="normal" title="忘記密碼">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -472,11 +475,11 @@
             <objects>
                 <viewController id="WCI-nX-MRs" customClass="BlankPageViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DaJ-Bg-xjU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="此功能尚未開放！！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyO-Oj-jgB">
-                                <rect key="frame" x="20" y="20" width="335" height="607"/>
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -505,24 +508,24 @@
             <objects>
                 <viewController id="dfu-kD-Gsf" customClass="FunctionViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zL6-KO-PDo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmk-jX-E7C">
-                                <rect key="frame" x="166.5" y="64" width="42" height="21"/>
+                                <rect key="frame" x="186" y="108" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T46-ev-HqT">
-                                <rect key="frame" x="67.5" y="105" width="240" height="240"/>
+                                <rect key="frame" x="87" y="149" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="LWa-aD-GuV"/>
                                     <constraint firstAttribute="height" constant="240" id="ZMt-J9-C1F"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IB4-2C-hkR">
-                                <rect key="frame" x="67.5" y="375" width="240" height="292"/>
+                                <rect key="frame" x="87" y="419" width="240" height="443"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Zl1-9u-K0h"/>
@@ -562,18 +565,18 @@
             <objects>
                 <viewController id="wDr-a5-W7i" customClass="ImageBlurAdjustViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DKn-JI-TSQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dsz-O7-vOK">
-                                <rect key="frame" x="67.5" y="152.5" width="240" height="180"/>
+                                <rect key="frame" x="87" y="226" width="240" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="uQv-RA-Mez"/>
                                     <constraint firstAttribute="height" constant="180" id="uod-L5-NCK"/>
                                 </constraints>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ecf-hA-6OJ">
-                                <rect key="frame" x="65.5" y="357.5" width="244" height="31"/>
+                                <rect key="frame" x="85" y="431" width="244" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="doq-oq-uBc"/>
                                 </constraints>
@@ -608,7 +611,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="bY3-v8-PuY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mG3-MR-x68">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -625,12 +628,37 @@
             <objects>
                 <viewController id="ldt-2P-6gx" customClass="NotificationViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O5J-ra-Tm3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T5X-r6-Kc1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="fBc-LQ-T7I" customClass="NotificationTableViewCell" customModule="iOS_practice_BankApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fBc-LQ-T7I" id="nr6-pI-V2W">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9rk-96-yda" firstAttribute="trailing" secondItem="T5X-r6-Kc1" secondAttribute="trailing" id="1LS-LR-aNp"/>
+                            <constraint firstItem="T5X-r6-Kc1" firstAttribute="leading" secondItem="9rk-96-yda" secondAttribute="leading" id="2b0-y1-b7C"/>
+                            <constraint firstItem="T5X-r6-Kc1" firstAttribute="top" secondItem="9rk-96-yda" secondAttribute="top" id="8FF-UJ-8l1"/>
+                            <constraint firstItem="9rk-96-yda" firstAttribute="bottom" secondItem="T5X-r6-Kc1" secondAttribute="bottom" id="O4W-Eb-G1c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9rk-96-yda"/>
                     </view>
                     <navigationItem key="navigationItem" id="jjf-3P-Rve"/>
+                    <connections>
+                        <outlet property="tableView" destination="T5X-r6-Kc1" id="W13-sh-hjs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yw8-0K-j71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -641,7 +669,7 @@
             <objects>
                 <viewController id="TjA-ab-hRp" customClass="QrcodeViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PE2-fn-ey3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Oy3-er-fly"/>
@@ -657,7 +685,7 @@
             <objects>
                 <viewController id="GPs-Zf-Pal" customClass="LocationViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5mW-TQ-W1e">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="lTP-eR-gcq"/>
@@ -670,7 +698,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Y2j-ZJ-uF8"/>
+        <segue reference="cW3-4O-z7W"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.text" catalog="system" width="115" height="128"/>

@@ -118,11 +118,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             break
         case "LoginSegue":
             let loginViewController = segue.destination as! LoginViewController
-            loginViewController.loginCompletionHandler = { value in
+            loginViewController.loginCompletionHandler = { UUID, memberType in
                 //todo 透過uuid顯示username
-                print("main: "+value)
+                print("main: " + UUID)
+                self.successfullyLoggedIn(memberType, UUID)
             }
-            
+        case "BlankPageSegue":
+            let blankPageViewController = segue.destination as! BlankPageViewController
+            blankPageViewController.receivedText = blankPageText
         default:
             break
         }
