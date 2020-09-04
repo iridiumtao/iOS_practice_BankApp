@@ -55,10 +55,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             
         // 功能的 cell
         } else {
-            let cell =
-              collectionView.dequeueReusableCell(
-                  withReuseIdentifier: "Cell", for: indexPath)
-            as! FunctionCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! FunctionCollectionViewCell
             
             cell.imageView.image = UIImage(named: functionList[indexPath.row].image)
             
@@ -119,6 +116,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             }
             
             break
+        case "LoginSegue":
+            let loginViewController = segue.destination as! LoginViewController
+            loginViewController.loginCompletionHandler = { value in
+                //todo 透過uuid顯示username
+                print("main: "+value)
+            }
+            
         default:
             break
         }

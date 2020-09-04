@@ -119,7 +119,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             layout.minimumLineSpacing = 30
             loginButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         } else {
-            layout.minimumLineSpacing = 10
+            layout.minimumLineSpacing = 5
         }
         functionCollectionView.collectionViewLayout = layout
     }

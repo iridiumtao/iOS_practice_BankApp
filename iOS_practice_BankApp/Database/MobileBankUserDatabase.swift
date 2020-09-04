@@ -29,7 +29,7 @@ struct MobileBankUserDatabase {
                 if result.userID == userID && result.password == password {
                     return result.uuid
                 } else {
-                    return "用戶ID或密碼錯誤."
+                    return "用戶ID或密碼錯誤"
                 }
             }
         }
