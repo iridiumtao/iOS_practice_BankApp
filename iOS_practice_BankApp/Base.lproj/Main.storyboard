@@ -631,27 +631,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T5X-r6-Kc1">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T5X-r6-Kc1">
+                                <rect key="frame" x="0.0" y="160" width="414" height="702"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="fBc-LQ-T7I" customClass="NotificationTableViewCell" customModule="iOS_practice_BankApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fBc-LQ-T7I" id="nr6-pI-V2W">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020/03/16 15:44:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucz-5P-Vw0">
+                                                    <rect key="frame" x="20" y="6" width="163" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【帳務通知】" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1In-tx-R11">
+                                                    <rect key="frame" x="20" y="40" width="104" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="這裡會顯示兩行字。這裡會顯示兩行字。這裡會顯示兩行字。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVD-By-JJv">
+                                                    <rect key="frame" x="20" y="61" width="374" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TVD-By-JJv" firstAttribute="top" secondItem="1In-tx-R11" secondAttribute="bottom" id="43F-VY-uhq"/>
+                                                <constraint firstAttribute="trailing" secondItem="TVD-By-JJv" secondAttribute="trailing" constant="20" id="Hhr-BH-IAy"/>
+                                                <constraint firstItem="Ucz-5P-Vw0" firstAttribute="top" secondItem="nr6-pI-V2W" secondAttribute="top" constant="6" id="JTf-IM-8CT"/>
+                                                <constraint firstItem="1In-tx-R11" firstAttribute="leading" secondItem="nr6-pI-V2W" secondAttribute="leadingMargin" id="Tw1-bz-AiZ"/>
+                                                <constraint firstItem="1In-tx-R11" firstAttribute="top" secondItem="Ucz-5P-Vw0" secondAttribute="bottom" constant="13" id="gGo-eZ-JCz"/>
+                                                <constraint firstItem="TVD-By-JJv" firstAttribute="leading" secondItem="1In-tx-R11" secondAttribute="leading" id="jN3-hF-acw"/>
+                                                <constraint firstItem="1In-tx-R11" firstAttribute="leading" secondItem="Ucz-5P-Vw0" secondAttribute="leading" id="twi-TF-VA9"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="TVD-By-JJv" id="Hyu-hT-AXb"/>
+                                            <outlet property="timeLabel" destination="Ucz-5P-Vw0" id="ftk-Bg-RSb"/>
+                                            <outlet property="titleLabel" destination="1In-tx-R11" id="oD0-DS-rVp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KyT-7f-wHI">
+                                <rect key="frame" x="0.0" y="120" width="414" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="L0I-rq-mfn"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="個人訊息"/>
+                                    <segment title="好康優惠"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USP-1V-jWr">
+                                <rect key="frame" x="55.5" y="93" width="96" height="22"/>
+                                <state key="normal" title="通知設定" image="gear" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ME-CU-9nj">
+                                <rect key="frame" x="281.5" y="93" width="58" height="22"/>
+                                <state key="normal" title="編輯" image="square.and.pencil" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="9rk-96-yda" firstAttribute="trailing" secondItem="T5X-r6-Kc1" secondAttribute="trailing" id="1LS-LR-aNp"/>
                             <constraint firstItem="T5X-r6-Kc1" firstAttribute="leading" secondItem="9rk-96-yda" secondAttribute="leading" id="2b0-y1-b7C"/>
-                            <constraint firstItem="T5X-r6-Kc1" firstAttribute="top" secondItem="9rk-96-yda" secondAttribute="top" id="8FF-UJ-8l1"/>
+                            <constraint firstItem="8ME-CU-9nj" firstAttribute="top" secondItem="9rk-96-yda" secondAttribute="top" constant="5" id="GGo-2Q-DAe"/>
+                            <constraint firstItem="USP-1V-jWr" firstAttribute="centerX" secondItem="O5J-ra-Tm3" secondAttribute="centerX" multiplier="0.5" id="Miq-Ne-xJh"/>
                             <constraint firstItem="9rk-96-yda" firstAttribute="bottom" secondItem="T5X-r6-Kc1" secondAttribute="bottom" id="O4W-Eb-G1c"/>
+                            <constraint firstItem="9rk-96-yda" firstAttribute="trailing" secondItem="KyT-7f-wHI" secondAttribute="trailing" id="Xje-TF-e0R"/>
+                            <constraint firstItem="USP-1V-jWr" firstAttribute="top" secondItem="9rk-96-yda" secondAttribute="top" constant="5" id="hDE-c9-pr0"/>
+                            <constraint firstItem="8ME-CU-9nj" firstAttribute="centerX" secondItem="O5J-ra-Tm3" secondAttribute="centerX" multiplier="1.5" id="hVM-k6-QT5"/>
+                            <constraint firstItem="T5X-r6-Kc1" firstAttribute="top" secondItem="KyT-7f-wHI" secondAttribute="bottom" id="mch-tg-ntk"/>
+                            <constraint firstItem="KyT-7f-wHI" firstAttribute="top" secondItem="USP-1V-jWr" secondAttribute="bottom" constant="5" id="teb-3s-ldw"/>
+                            <constraint firstItem="KyT-7f-wHI" firstAttribute="leading" secondItem="9rk-96-yda" secondAttribute="leading" id="wq3-9A-xcy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9rk-96-yda"/>
                     </view>
@@ -662,7 +725,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yw8-0K-j71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7622" y="-1174"/>
+            <point key="canvasLocation" x="7621.739130434783" y="-1174.5535714285713"/>
         </scene>
         <!--Qrcode View Controller-->
         <scene sceneID="N86-BZ-Ter">
@@ -702,6 +765,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.text" catalog="system" width="115" height="128"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="lock.open" catalog="system" width="128" height="112"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
