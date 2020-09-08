@@ -635,11 +635,11 @@
                                 <rect key="frame" x="0.0" y="160" width="414" height="702"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="fBc-LQ-T7I" customClass="NotificationTableViewCell" customModule="iOS_practice_BankApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="fBc-LQ-T7I" customClass="NotificationTableViewCell" customModule="iOS_practice_BankApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fBc-LQ-T7I" id="nr6-pI-V2W">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="108"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020/03/16 15:44:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucz-5P-Vw0">
@@ -655,7 +655,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="這裡會顯示兩行字。這裡會顯示兩行字。這裡會顯示兩行字。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVD-By-JJv">
-                                                    <rect key="frame" x="20" y="61" width="374" height="41"/>
+                                                    <rect key="frame" x="20" y="61" width="343" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -688,31 +688,41 @@
                                     <segment title="個人訊息"/>
                                     <segment title="好康優惠"/>
                                 </segments>
+                                <connections>
+                                    <action selector="messageTypeSegmentedControlValueChanged:" destination="ldt-2P-6gx" eventType="valueChanged" id="uUj-VY-3qN"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USP-1V-jWr">
                                 <rect key="frame" x="55.5" y="93" width="96" height="22"/>
                                 <state key="normal" title="通知設定" image="gear" catalog="system">
                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="notificationSettingButtonClicked:" destination="ldt-2P-6gx" eventType="touchUpInside" id="l7L-jh-bHq"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ME-CU-9nj">
-                                <rect key="frame" x="281.5" y="93" width="58" height="22"/>
-                                <state key="normal" title="編輯" image="square.and.pencil" catalog="system">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdJ-f3-7WH">
+                                <rect key="frame" x="263.5" y="93" width="94.5" height="22"/>
+                                <state key="normal" title="編輯訊息" image="square.and.pencil" catalog="system">
                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="editButtonClicked:" destination="ldt-2P-6gx" eventType="touchUpInside" id="H9K-B3-OrG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="9rk-96-yda" firstAttribute="trailing" secondItem="T5X-r6-Kc1" secondAttribute="trailing" id="1LS-LR-aNp"/>
                             <constraint firstItem="T5X-r6-Kc1" firstAttribute="leading" secondItem="9rk-96-yda" secondAttribute="leading" id="2b0-y1-b7C"/>
-                            <constraint firstItem="8ME-CU-9nj" firstAttribute="top" secondItem="9rk-96-yda" secondAttribute="top" constant="5" id="GGo-2Q-DAe"/>
                             <constraint firstItem="USP-1V-jWr" firstAttribute="centerX" secondItem="O5J-ra-Tm3" secondAttribute="centerX" multiplier="0.5" id="Miq-Ne-xJh"/>
                             <constraint firstItem="9rk-96-yda" firstAttribute="bottom" secondItem="T5X-r6-Kc1" secondAttribute="bottom" id="O4W-Eb-G1c"/>
                             <constraint firstItem="9rk-96-yda" firstAttribute="trailing" secondItem="KyT-7f-wHI" secondAttribute="trailing" id="Xje-TF-e0R"/>
+                            <constraint firstItem="NdJ-f3-7WH" firstAttribute="top" secondItem="9rk-96-yda" secondAttribute="top" constant="5" id="ZjU-g5-26a"/>
                             <constraint firstItem="USP-1V-jWr" firstAttribute="top" secondItem="9rk-96-yda" secondAttribute="top" constant="5" id="hDE-c9-pr0"/>
-                            <constraint firstItem="8ME-CU-9nj" firstAttribute="centerX" secondItem="O5J-ra-Tm3" secondAttribute="centerX" multiplier="1.5" id="hVM-k6-QT5"/>
                             <constraint firstItem="T5X-r6-Kc1" firstAttribute="top" secondItem="KyT-7f-wHI" secondAttribute="bottom" id="mch-tg-ntk"/>
+                            <constraint firstItem="KyT-7f-wHI" firstAttribute="top" secondItem="NdJ-f3-7WH" secondAttribute="bottom" constant="5" id="psM-6F-gyD"/>
+                            <constraint firstItem="NdJ-f3-7WH" firstAttribute="centerX" secondItem="O5J-ra-Tm3" secondAttribute="centerX" multiplier="1.5" id="rk7-gm-qpx"/>
                             <constraint firstItem="KyT-7f-wHI" firstAttribute="top" secondItem="USP-1V-jWr" secondAttribute="bottom" constant="5" id="teb-3s-ldw"/>
                             <constraint firstItem="KyT-7f-wHI" firstAttribute="leading" secondItem="9rk-96-yda" secondAttribute="leading" id="wq3-9A-xcy"/>
                         </constraints>
@@ -720,7 +730,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="jjf-3P-Rve"/>
                     <connections>
+                        <outlet property="editButton" destination="NdJ-f3-7WH" id="XJk-gy-iM7"/>
+                        <outlet property="messageTypeSegmentedControl" destination="KyT-7f-wHI" id="wZO-zu-mRR"/>
+                        <outlet property="notificationSettingButton" destination="USP-1V-jWr" id="lkK-8W-EKa"/>
                         <outlet property="tableView" destination="T5X-r6-Kc1" id="W13-sh-hjs"/>
+                        <segue destination="WCI-nX-MRs" kind="show" id="gnG-Jh-9ne"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yw8-0K-j71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -761,7 +775,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cW3-4O-z7W"/>
+        <segue reference="gnG-Jh-9ne"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.text" catalog="system" width="115" height="128"/>
