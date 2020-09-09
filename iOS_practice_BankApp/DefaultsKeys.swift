@@ -13,4 +13,12 @@ struct defaultsKeys {
     static let blurIntensity = "blurIntensity"
     static let rememberNationID = "rememberNationID"
     static let nationID = "nationID"
+    static let memberType = "memberType"
+    static let isDeviceOwnerAuthentication = "isDeviceOwnerAuthentication"
+}
+
+struct keyChainKeys {
+    static let nationID = "nationID"
+    static let userID = "userID"
+    static let password = "password"
 }

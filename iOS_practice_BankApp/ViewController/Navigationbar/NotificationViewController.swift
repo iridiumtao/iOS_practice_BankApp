@@ -114,7 +114,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             messageDatabase.deleteMessage(messageType: messageType, userIndexRowInTableView: indexPath.row)
             messageDatabase.clearLocalMessages()
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            //tableViewReloadDataAndClearLocalMessages()
+            
             
         }
     }

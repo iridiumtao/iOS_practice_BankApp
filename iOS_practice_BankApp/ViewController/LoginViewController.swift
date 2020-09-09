@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
+import LocalAuthentication
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -43,7 +45,23 @@ class LoginViewController: UIViewController {
         if rememberNationID {
             nationalIDTextField.text = defaults.string(forKey: defaultsKeys.nationID)
         }
+        
+        // 如果不是第一次打開，設定預設 memberType 及調整 segmentedControl 的顯示
+        if defaults.bool(forKey: defaultsKeys.isNotFirstTimeOpenApp) {
+        
+            memberType = defaults.string(forKey: defaultsKeys.memberType) ?? "mobileBank"
+            if memberType == "mobileBank" {
+                segmentedControl.selectedSegmentIndex = 0
+            } else {
+                segmentedControl.selectedSegmentIndex = 1
+            }
+        }
         setRememberNationIDCheckButtonImage()
+        
+        // 若使用生物認證
+        if defaults.bool(forKey: defaultsKeys.isDeviceOwnerAuthentication) {
+            deviceOwnerAuthentication()
+        }
 
     }
     
@@ -77,9 +95,8 @@ class LoginViewController: UIViewController {
         } else {
             memberType = "creditCard"
             hintLabel.text = "請輸入信用卡會員 會員代號與密碼"
-
         }
-        
+        defaults.set(memberType, forKey: defaultsKeys.memberType)
         
     }
     
@@ -119,24 +136,116 @@ class LoginViewController: UIViewController {
         }
         
         if regexMatch(uuidOrErrorMessage, "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}") {
+            successfullyLoginAction(uuid: uuidOrErrorMessage)
+        } else {
+            makeAlert(title: "登入失敗", message: uuidOrErrorMessage)
+        }
+    }
+    
+    // 登入成功後的動作
+    func successfullyLoginAction(uuid: String) {
+        if !defaults.bool(forKey: defaultsKeys.isDeviceOwnerAuthentication) {
+            askDeviceOwnerAuthentication(uuid: uuid)
             
-            // 通知，因為要修改 completion，所以在這邊重新弄一個
+        } else {
+        
+            // 通知Alert，因為要修改 completion，所以在這邊重新弄一個
             let controller = UIAlertController(title: "提示訊息", message: "登入成功", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: { (_) in
                 
-                
+                // 按下OK後：關閉登入頁面、傳送登入資訊
                 self.dismiss(animated: true, completion: nil)
-                self.loginCompletionHandler?(uuidOrErrorMessage, self.memberType)
+                self.loginCompletionHandler?(uuid, self.memberType)
                 
             })
             controller.addAction(okAction)
             
             present(controller, animated: true, completion: nil)
-            
-            
-        } else {
-            makeAlert(title: "登入失敗", message: uuidOrErrorMessage)
         }
+    }
+    
+    // 詢問是否使用生物認證
+    func askDeviceOwnerAuthentication(uuid: String) {
+        let controller = UIAlertController(title: "登入成功", message: "是否要儲存登入資料，並在未來透過生物認證自動登入？", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "儲存並使用", style: .default, handler: { (_) in
+            
+            // 按下「儲存並使用」後：透過 SwiftKeychainWrapper 儲存資料，並設定使用生物認證自動登入
+            KeychainWrapper.standard.set(self.nationalIDTextField.text!, forKey: keyChainKeys.nationID)
+            KeychainWrapper.standard.set(self.userIDTextField.text!, forKey: keyChainKeys.userID)
+            KeychainWrapper.standard.set(self.passwordTextField.text!, forKey: keyChainKeys.password)
+            
+            // 存在預設中
+            self.defaults.set(true, forKey: defaultsKeys.isDeviceOwnerAuthentication)
+            
+            self.dismiss(animated: true, completion: nil)
+            self.loginCompletionHandler?(uuid, self.memberType)
+            
+        })
+        let noAction = UIAlertAction(title: "不使用", style: .cancel, handler: { (_) in
+            self.dismiss(animated: true, completion: nil)
+            self.loginCompletionHandler?(uuid, self.memberType)
+        })
+        controller.addAction(okAction)
+        controller.addAction(noAction)
+        present(controller, animated: true, completion: nil)
+    }
+    
+    // source: https://medium.com/jeremy-xue-s-blog/swift-%E7%8E%A9%E7%8E%A9-touch-id-faceid-%E9%A9%97%E8%AD%89-d30be0ac803b
+    /// 使用生物認證登入
+    func deviceOwnerAuthentication() {
+        
+        // 創建 LAContext 實例
+        let context = LAContext()
+        // 設置取消按鈕標題
+        context.localizedCancelTitle = "取消"
+        // 宣告一個變數接收 canEvaluatePolicy 返回的錯誤
+        var error: NSError?
+        // 評估是否可以針對給定方案進行身份驗證
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
+            // 描述使用身份辨識的原因
+            let reason = "Log in to your account"
+            // 評估指定方案
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { (success, error) in
+                if success {
+                    DispatchQueue.main.async { [unowned self] in
+                        
+                        let nationID = KeychainWrapper.standard.string(forKey: keyChainKeys.nationID)!
+                        let userID = KeychainWrapper.standard.string(forKey: keyChainKeys.userID)!
+                        let password = KeychainWrapper.standard.string(forKey: keyChainKeys.password)!
+                        
+                        var uuid = ""
+                        
+                        if self.memberType == "mobileBank" {
+                            uuid = self.mobileBankUserDatabase.searchData(nationalID: nationID,
+                                                                        userID: userID,
+                                                                        password: password)
+                        } else {
+                            uuid = self.creditCardUserDatabase.searchData(nationalID: nationID,
+                                                                        userID: userID,
+                                                                        password: password)
+                        }
+                        
+                        
+                        // 由於使用生物認證就不需要 successfullyLoginAction() 中的 alert，
+                        // 故直接於此回傳 UUID，並於 viewDidLoad() 中，
+                        // 呼叫此 function 的地方 dismiss() 登入頁面
+                        self.loginCompletionHandler?(uuid, self.memberType)
+                        self.justDismiss()
+                    }
+                } else {
+                    DispatchQueue.main.async { [unowned self] in
+                        self.makeAlert(title: "認證失敗", message: error?.localizedDescription ?? "")
+                        self.defaults.set(false, forKey: defaultsKeys.isDeviceOwnerAuthentication)
+                    }
+                }
+            }
+        } else {
+            makeAlert(title: "失敗", message: error?.localizedDescription ?? "")
+        }
+    }
+    
+    func justDismiss() {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
