@@ -12,8 +12,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == currencyCollectionView {
+            // 匯率
             return 11
         } else {
+            // 九宮格功能按鈕
             return 9
         }
     }
@@ -72,7 +74,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     // 按下功能後跳轉頁面，並傳值
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == functionCollectionView {
-            // todo segue
             functionSelectedIndexPath = indexPath.row
             performSegue(withIdentifier: "FunctionSegue", sender: nil)
             
@@ -82,7 +83,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     // 設定每個cell的大小
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == functionCollectionView {
-            // 透過螢幕解析度計算 cell 大小
+            // 透過螢幕解析度計算 cell 大小，支援SE2 ~ Pro Max
             let fullScreenSize = UIScreen.main.bounds.size
             return CGSize(width: (fullScreenSize.width - 60) / 3, height: (fullScreenSize.width - 60) / 3)
         } else {
@@ -94,6 +95,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "FunctionSegue":
+            // 去功能頁面
+
             let functionViewController = segue.destination as! FunctionViewController
             
             // 設定要顯示的資料
@@ -102,14 +105,15 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 functionViewController.setImage(imageName: functionList[selectedId].image)
                 functionViewController.setTextViewText(content: functionList[selectedId].content, url: functionList[selectedId].url)
             }
-            
         case "ImageBlurAdjustSegue":
+            // 去調整圖片模糊度頁面
+
             let imageBlurAdjustViewController = segue.destination as! ImageBlurAdjustViewController
             print("imageIntensity prepare \(self.imageIntensity)")
             imageBlurAdjustViewController.sliderValue = imageIntensity
             imageBlurAdjustViewController.imageBlurAdjustCompletionHandler = { value in
                 self.imageIntensity = value
-                    
+                self.defaults.set(value, forKey: defaultsKeys.blurIntensity)
                 print("imageIntensity completion \(self.imageIntensity)")
                 self.functionCollectionView.reloadData()
 
@@ -117,13 +121,18 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             
             break
         case "LoginSegue":
+            // 去登入頁面
+
             let loginViewController = segue.destination as! LoginViewController
             loginViewController.loginCompletionHandler = { UUID, memberType in
-                //todo 透過uuid顯示username
+                //todo 在那邊呼叫 getUsername()，透過 uuid 顯示 username
                 print("main: " + UUID)
                 self.successfullyLoggedIn(memberType, UUID)
             }
+        
         case "BlankPageSegue":
+            // 去空白頁面
+            
             let blankPageViewController = segue.destination as! BlankPageViewController
             blankPageViewController.receivedText = blankPageText
         default:

@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var forgotPasswordButton: UIButton!
    
     var memberType = "mobileBank"
+    let defaults = UserDefaults.standard
     var rememberNationID = false
     var blankPageText = ""
     
@@ -36,6 +37,14 @@ class LoginViewController: UIViewController {
         
         loginButton.layer.cornerRadius = loginButton.bounds.height / 2
         cancelButton.layer.cornerRadius = cancelButton.bounds.height / 2
+        
+        // 取得存在手機裡面的資料
+        rememberNationID = defaults.bool(forKey: defaultsKeys.rememberNationID)
+        if rememberNationID {
+            nationalIDTextField.text = defaults.string(forKey: defaultsKeys.nationID)
+        }
+        setRememberNationIDCheckButtonImage()
+
     }
     
     // 按鈕「記住身分證字號/統一編號」
@@ -46,12 +55,19 @@ class LoginViewController: UIViewController {
         }
         
         rememberNationID = !rememberNationID
+        setRememberNationIDCheckButtonImage()
+        
+        // 記住身分證字號/統一編號
+        defaults.set(rememberNationID, forKey: defaultsKeys.rememberNationID)
+        
+    }
+    
+    func setRememberNationIDCheckButtonImage() {
         if rememberNationID {
             rememberNationIDCheckButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
         } else {
             rememberNationIDCheckButton.setImage(UIImage(systemName: "square"), for: .normal)
         }
-        // todo 記住身分證字號/統一編號
     }
     
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -73,6 +89,7 @@ class LoginViewController: UIViewController {
         print(message)
         if message == "ok" {
             login()
+            defaults.set(nationalIDTextField.text!, forKey: defaultsKeys.nationID)
         } else {
             makeAlert(title: "登入失敗", message: message)
         }

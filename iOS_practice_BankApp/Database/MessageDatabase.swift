@@ -47,20 +47,16 @@ struct MessageDatabase {
         }
     }
     
-    func createMessage() {
+    func createMessage(messageType: String) {
         let message = RLM_Message()
         
-        let number = Int.random(in: 0..<2)
-        
-        if number == 0 {
-            message.messageType = "個人訊息"
-        } else {
-            message.messageType = "好康優惠"
-        }
-        
+
+        message.messageType = messageType
+       
         message.time = Date.init()
-        message.title = "測試訊息"
+        message.title = "【測試訊息 - \(messageType)】"
         message.content = "此訊息為測試訊息，標題為測試訊息。補字補字補字補字補字補字補字補字補字"
+        message.isRead = false
         print(message.messageType + "訊息已創建")
         
         try! realm.write {
@@ -91,17 +87,20 @@ struct MessageDatabase {
     }
     
     mutating func readMessage(messageType:String, userIndexRowInTableView index: Int) {
-        //todo 已讀訊息
+        if let messages = messages {
+            let message = realm.objects(RLM_Message.self).filter("uuid = %@", messages[index].UUID).first
+            
+            try! realm.write {
+                message!.isRead = true
+            }
+        }
     }
     
     mutating func deleteMessage(messageType:String, userIndexRowInTableView index: Int) {
         
-        //todo index to uuid
         
-        
-        // 確保 messages 存在
+        // 用 if let 確保 messages 存在
         if let messages = messages {
-            print(messages[index])
             
             let message = realm.objects(RLM_Message.self).filter("uuid = %@", messages[index].UUID)
             

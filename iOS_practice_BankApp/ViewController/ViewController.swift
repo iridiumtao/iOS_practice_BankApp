@@ -21,6 +21,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var imageIntensity = 10.0
     
+    // 存在手機內部的資料
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,7 +57,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // 標題
         self.navigationItem.title = "銀行App"
         
-        // todo 沒網路時跳出通知
+        // 取得存在手機裡面的資料
+        imageIntensity = defaults.double(forKey: defaultsKeys.blurIntensity)
+
+        // 如果是第一次打開 App，回傳 false
+        let isNotFirstTimeOpenApp = defaults.bool(forKey: defaultsKeys.isNotFirstTimeOpenApp)
+        if !isNotFirstTimeOpenApp {
+            imageIntensity = 10.0
+            defaults.set(true, forKey: defaultsKeys.isNotFirstTimeOpenApp)
+        }
+        
     }
     
     // Navigation bar 的按鈕們
@@ -77,6 +89,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         performSegue(withIdentifier: "BlankPageSegue", sender: nil)
     }
     
+    // 長按了之後時候
     @objc func onLongPress(gestureRecognizer : UILongPressGestureRecognizer) {
         // 抄來的，我也不知道是什麼
         if (gestureRecognizer.state != UIGestureRecognizer.State.ended){

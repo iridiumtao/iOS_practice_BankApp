@@ -308,7 +308,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A123456789" borderStyle="roundedRect" placeholder="身分證字號/統一編號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Hb-We-ekU" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="身分證字號/統一編號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Hb-We-ekU" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
                                 <rect key="frame" x="32" y="139" width="350" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lmb-CP-zr3"/>
@@ -322,7 +322,7 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="square.and.pencil" catalog="system"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A1234567" borderStyle="roundedRect" placeholder="用戶代號(英文大小視為不同)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-e9-KRC" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用戶代號(英文大小視為不同)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-e9-KRC" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
                                 <rect key="frame" x="32" y="204" width="350" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="UXv-mL-HSA"/>
@@ -336,7 +336,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="B1234567" borderStyle="roundedRect" placeholder="理財密碼(英文大小寫視為不同)" textAlignment="natural" minimumFontSize="17" background="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PbL-dq-Woq" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="理財密碼(英文大小寫視為不同)" textAlignment="natural" minimumFontSize="17" background="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PbL-dq-Woq" customClass="DesignableUITextField" customModule="iOS_practice_BankApp" customModuleProvider="target">
                                 <rect key="frame" x="32" y="269" width="350" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7qV-ql-1Ch"/>
@@ -475,11 +475,11 @@
             <objects>
                 <viewController id="WCI-nX-MRs" customClass="BlankPageViewController" customModule="iOS_practice_BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DaJ-Bg-xjU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="此功能尚未開放！！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyO-Oj-jgB">
-                                <rect key="frame" x="20" y="108" width="374" height="734"/>
+                                <rect key="frame" x="20" y="20" width="374" height="768"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -632,7 +632,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T5X-r6-Kc1">
-                                <rect key="frame" x="0.0" y="160" width="414" height="702"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="fBc-LQ-T7I" customClass="NotificationTableViewCell" customModule="iOS_practice_BankApp" customModuleProvider="target">
@@ -716,7 +716,7 @@
                             <constraint firstItem="9rk-96-yda" firstAttribute="trailing" secondItem="T5X-r6-Kc1" secondAttribute="trailing" id="1LS-LR-aNp"/>
                             <constraint firstItem="T5X-r6-Kc1" firstAttribute="leading" secondItem="9rk-96-yda" secondAttribute="leading" id="2b0-y1-b7C"/>
                             <constraint firstItem="USP-1V-jWr" firstAttribute="centerX" secondItem="O5J-ra-Tm3" secondAttribute="centerX" multiplier="0.5" id="Miq-Ne-xJh"/>
-                            <constraint firstItem="9rk-96-yda" firstAttribute="bottom" secondItem="T5X-r6-Kc1" secondAttribute="bottom" id="O4W-Eb-G1c"/>
+                            <constraint firstAttribute="bottom" secondItem="T5X-r6-Kc1" secondAttribute="bottom" id="O4W-Eb-G1c"/>
                             <constraint firstItem="9rk-96-yda" firstAttribute="trailing" secondItem="KyT-7f-wHI" secondAttribute="trailing" id="Xje-TF-e0R"/>
                             <constraint firstItem="NdJ-f3-7WH" firstAttribute="top" secondItem="9rk-96-yda" secondAttribute="top" constant="5" id="ZjU-g5-26a"/>
                             <constraint firstItem="USP-1V-jWr" firstAttribute="top" secondItem="9rk-96-yda" secondAttribute="top" constant="5" id="hDE-c9-pr0"/>
@@ -734,7 +734,7 @@
                         <outlet property="messageTypeSegmentedControl" destination="KyT-7f-wHI" id="wZO-zu-mRR"/>
                         <outlet property="notificationSettingButton" destination="USP-1V-jWr" id="lkK-8W-EKa"/>
                         <outlet property="tableView" destination="T5X-r6-Kc1" id="W13-sh-hjs"/>
-                        <segue destination="WCI-nX-MRs" kind="show" id="gnG-Jh-9ne"/>
+                        <segue destination="WCI-nX-MRs" kind="show" identifier="BlankPageSegue" id="gnG-Jh-9ne"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yw8-0K-j71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -775,7 +775,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gnG-Jh-9ne"/>
+        <segue reference="Y2j-ZJ-uF8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.text" catalog="system" width="115" height="128"/>

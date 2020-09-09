@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0E19FD2508FA76005062EC /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0E19FC2508FA76005062EC /* DefaultsKeys.swift */; };
 		3C1D6B2F250127400097960D /* APCustomBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1D6B2E250127400097960D /* APCustomBlurView.swift */; };
 		3C27A77924D85CC200DCBE82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C27A77824D85CC200DCBE82 /* AppDelegate.swift */; };
 		3C27A77B24D85CC200DCBE82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C27A77A24D85CC200DCBE82 /* SceneDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C0E19FC2508FA76005062EC /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		3C1D6B2E250127400097960D /* APCustomBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APCustomBlurView.swift; sourceTree = "<group>"; };
 		3C27A77524D85CC200DCBE82 /* iOS_practice_BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_practice_BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C27A77824D85CC200DCBE82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				3C6DFA5C24FD65C900735B87 /* DesignableUITextField.swift */,
 				3C1D6B2E250127400097960D /* APCustomBlurView.swift */,
 				3C7932BF2502B6B800CE42FC /* CustomFunctions.swift */,
+				3C0E19FC2508FA76005062EC /* DefaultsKeys.swift */,
 				3C39727824EE8941002C21C1 /* ViewController */,
 				3C42E6BC24DF09EA003FC031 /* ReuseableViewCells */,
 				3C39727724EE892C002C21C1 /* DecodeJson */,
@@ -327,6 +330,7 @@
 				3C27A77924D85CC200DCBE82 /* AppDelegate.swift in Sources */,
 				3C27A77B24D85CC200DCBE82 /* SceneDelegate.swift in Sources */,
 				3CAE7BF524F68BF30048B57F /* BlankPageViewController.swift in Sources */,
+				3C0E19FD2508FA76005062EC /* DefaultsKeys.swift in Sources */,
 				3C39727524EE8822002C21C1 /* ViewController+CollectionViewFunctions.swift in Sources */,
 				3C42E6BE24DF0A04003FC031 /* CurrencyCollectionViewCell.swift in Sources */,
 				3C6DFA5D24FD65C900735B87 /* DesignableUITextField.swift in Sources */,
